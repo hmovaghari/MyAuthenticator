@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthenticator.FramworkLibrary", "MyAuthenticator.FramworkLibrary\MyAuthenticator.FramworkLibrary.csproj", "{D35CA0D4-44F3-4D5B-AB21-A7CBA233CF2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthenticator.FramworkApp", "MyAuthenticator.App\MyAuthenticator.FramworkApp.csproj", "{E7D229BB-E24C-4181-A9B0-87EC635D6148}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthenticator.FramworkData", "MyAuthenticator.FramworkData\MyAuthenticator.FramworkData.csproj", "{4C8B4DC2-6E52-4FF6-9CC9-C65D58F34854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthenticator.FramworkApp", "MyAuthenticator.FramworkApp\MyAuthenticator.FramworkApp.csproj", "{E7D229BB-E24C-4181-A9B0-87EC635D6148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{D35CA0D4-44F3-4D5B-AB21-A7CBA233CF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D35CA0D4-44F3-4D5B-AB21-A7CBA233CF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D35CA0D4-44F3-4D5B-AB21-A7CBA233CF2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C8B4DC2-6E52-4FF6-9CC9-C65D58F34854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C8B4DC2-6E52-4FF6-9CC9-C65D58F34854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8B4DC2-6E52-4FF6-9CC9-C65D58F34854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8B4DC2-6E52-4FF6-9CC9-C65D58F34854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D229BB-E24C-4181-A9B0-87EC635D6148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
