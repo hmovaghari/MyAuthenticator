@@ -191,6 +191,10 @@ namespace MyAuthenticator.FramworkApp
                 {
                     return currentPassword;
                 }
+                else
+                {
+                    return null;
+                }
             }
             return currentPassword;
         }
@@ -304,45 +308,6 @@ namespace MyAuthenticator.FramworkApp
             }
             grdPassword.AutoResizeColumns();
         }
-
-        //private Image GetCounter(int intervalSeconds)
-        //{
-        //    switch (intervalSeconds.ToString("00"))
-        //    {
-        //        case "01": return Resources.Counter01;
-        //        case "02": return Resources.Counter02;
-        //        case "03": return Resources.Counter03;
-        //        case "04": return Resources.Counter04;
-        //        case "05": return Resources.Counter05;
-        //        case "06": return Resources.Counter06;
-        //        case "07": return Resources.Counter07;
-        //        case "08": return Resources.Counter08;
-        //        case "09": return Resources.Counter09;
-        //        case "10": return Resources.Counter10;
-        //        case "11": return Resources.Counter11;
-        //        case "12": return Resources.Counter12;
-        //        case "13": return Resources.Counter13;
-        //        case "14": return Resources.Counter14;
-        //        case "15": return Resources.Counter15;
-        //        case "16": return Resources.Counter16;
-        //        case "17": return Resources.Counter17;
-        //        case "18": return Resources.Counter18;
-        //        case "19": return Resources.Counter19;
-        //        case "20": return Resources.Counter20;
-        //        case "21": return Resources.Counter21;
-        //        case "22": return Resources.Counter22;
-        //        case "23": return Resources.Counter23;
-        //        case "24": return Resources.Counter24;
-        //        case "25": return Resources.Counter25;
-        //        case "26": return Resources.Counter26;
-        //        case "27": return Resources.Counter27;
-        //        case "28": return Resources.Counter28;
-        //        case "29": return Resources.Counter29;
-        //        case "30": return Resources.Counter30;
-        //        default:
-        //            return null;
-        //    }
-        //}
 
         private void btnCopyPassword_Click(object sender, EventArgs e)
         {
