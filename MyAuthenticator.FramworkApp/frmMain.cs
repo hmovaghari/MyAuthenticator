@@ -382,6 +382,7 @@ namespace MyAuthenticator.FramworkApp
         {
             using (var frm = new frmLogin(ChangePasswordMode.Change))
             {
+                frm.Text = btnChangePassword.Text;
                 var result = frm.ShowDialog();
                 if (result == DialogResult.OK)
                 {

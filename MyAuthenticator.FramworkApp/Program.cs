@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkData.Context;
+using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -31,6 +33,7 @@ namespace MyAuthenticator.FramworkApp
             }
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static bool OpenLoginForm()
         {
             var passwordMode = SettingRepository.GetPasswordMode();
@@ -43,6 +46,10 @@ namespace MyAuthenticator.FramworkApp
                 var changePasswordMode = passwordMode == PasswordMode.Null ? ChangePasswordMode.Create : ChangePasswordMode.Login;
                 using (var frm = new frmLogin(changePasswordMode))
                 {
+                    if (new StackFrame(1, true).GetMethod().Name != "Main")
+                    {
+                        frm.Text = "احراز هویت";
+                    }
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         return true;
