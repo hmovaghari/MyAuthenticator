@@ -26,7 +26,7 @@ namespace MyAuthenticator.FramworkData.Repository
         public static void Backup(string backupPath)
         {
             var databasePath = GetDatabasePath();
-            File.Copy(databasePath, backupPath, true);
+            ZipFile.CreateFromDirectory(databaseDirectory, databaseDirectory);
         }
 
         public static void Restore(string backupPath)
