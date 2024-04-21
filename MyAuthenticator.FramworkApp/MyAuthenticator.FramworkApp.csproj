@@ -174,6 +174,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Counter29.gif" />
+    <None Include="Resources\Counter28.gif" />
+    <None Include="Resources\Counter27.gif" />
+    <None Include="Resources\Counter26.gif" />
+    <None Include="Resources\Counter25.gif" />
+    <None Include="Resources\Counter24.gif" />
+    <None Include="Resources\Counter23.gif" />
+    <None Include="Resources\Counter22.gif" />
+    <None Include="Resources\Counter21.gif" />
+    <None Include="Resources\Counter20.gif" />
+    <None Include="Resources\Counter19.gif" />
+    <None Include="Resources\Counter18.gif" />
+    <None Include="Resources\Counter17.gif" />
+    <None Include="Resources\Counter16.gif" />
+    <None Include="Resources\Counter15.gif" />
+    <None Include="Resources\Counter14.gif" />
+    <None Include="Resources\Counter13.gif" />
+    <None Include="Resources\Counter12.gif" />
+    <None Include="Resources\Counter11.gif" />
+    <None Include="Resources\Counter10.gif" />
+    <None Include="Resources\Counter09.gif" />
+    <None Include="Resources\Counter08.gif" />
+    <None Include="Resources\Counter07.gif" />
+    <None Include="Resources\Counter06.gif" />
+    <None Include="Resources\Counter05.gif" />
+    <None Include="Resources\Counter04.gif" />
+    <None Include="Resources\Counter03.gif" />
+    <None Include="Resources\Counter02.gif" />
+    <None Include="Resources\Counter01.gif" />
+    <None Include="Resources\Counter30.gif" />
     <None Include="Resources\Down.png" />
     <None Include="Resources\Up.png" />
     <None Include="Resources\Between.png" />

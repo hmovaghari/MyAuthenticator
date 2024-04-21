@@ -61,7 +61,6 @@
             this.mnuPassword = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShowPassword = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCopyPassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.bsPassword = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNameSearch = new System.Windows.Forms.TextBox();
@@ -70,9 +69,12 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.timerCounter = new System.Windows.Forms.Timer(this.components);
+            this.bsPassword = new System.Windows.Forms.BindingSource(this.components);
             this.RowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PasswordString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Up = new System.Windows.Forms.DataGridViewImageColumn();
             this.Down = new System.Windows.Forms.DataGridViewImageColumn();
             this.Between = new System.Windows.Forms.DataGridViewImageColumn();
@@ -87,8 +89,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).BeginInit();
             this.mnuPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -437,6 +439,7 @@
             this.RowNumber,
             this.Title,
             this.PasswordString,
+            this.Counter,
             this.Up,
             this.Down,
             this.Between,
@@ -480,11 +483,6 @@
             this.btnCopyPassword.Text = "کپی کلمه عبور";
             this.btnCopyPassword.Click += new System.EventHandler(this.btnCopyPassword_Click);
             // 
-            // bsPassword
-            // 
-            this.bsPassword.DataSource = typeof(MyAuthenticator.FramworkApp.PasswordDTO);
-            this.bsPassword.CurrentChanged += new System.EventHandler(this.bsPassword_CurrentChanged);
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -527,6 +525,10 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // timerClearPassword
+            // 
+            this.timerClearPassword.Tick += new System.EventHandler(this.timerClearPassword_Tick);
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "PasswordData";
@@ -541,6 +543,16 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Backup|*.bak";
+            // 
+            // timerCounter
+            // 
+            this.timerCounter.Interval = 1000;
+            this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
+            // 
+            // bsPassword
+            // 
+            this.bsPassword.DataSource = typeof(MyAuthenticator.FramworkApp.PasswordDTO);
+            this.bsPassword.CurrentChanged += new System.EventHandler(this.bsPassword_CurrentChanged);
             // 
             // RowNumber
             // 
@@ -565,6 +577,14 @@
             this.PasswordString.HeaderText = "کلمه عبور پویا";
             this.PasswordString.Name = "PasswordString";
             this.PasswordString.ReadOnly = true;
+            // 
+            // Counter
+            // 
+            this.Counter.DataPropertyName = "Counter";
+            this.Counter.HeaderText = "";
+            this.Counter.Name = "Counter";
+            this.Counter.ReadOnly = true;
+            this.Counter.Width = 32;
             // 
             // Up
             // 
@@ -650,9 +670,9 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).EndInit();
             this.mnuPassword.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -700,9 +720,11 @@
         private System.Windows.Forms.ToolStripMenuItem دریافترمزعبوردرزمانToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowSecretKey;
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowDynamicPasswordKey;
+        private System.Windows.Forms.Timer timerCounter;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordString;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Counter;
         private System.Windows.Forms.DataGridViewImageColumn Up;
         private System.Windows.Forms.DataGridViewImageColumn Down;
         private System.Windows.Forms.DataGridViewImageColumn Between;

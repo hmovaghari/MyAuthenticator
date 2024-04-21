@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,14 @@ namespace MyAuthenticator.FramworkApp
 
         public decimal RowNumber { get; set; }
 
+        public int? Counter { get; set; }
+
         public Password PasswordData => new Password()
         {
             PasswordID = PasswordID,
             RowNumber = RowNumber,
             Name = Title,
-            SecretKey = SecretKey,
+            SecretKey = SecretKey
         };
     }
 }
