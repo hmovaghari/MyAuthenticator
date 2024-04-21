@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity;
+using System.Data.SqlServerCe;
 using System.Linq;
 
 namespace MyAuthenticator.FramworkData.Context
@@ -15,6 +16,10 @@ namespace MyAuthenticator.FramworkData.Context
         public Model()
             : base("name=Model")
         {
+            SqlCeConnectionStringBuilder sqlCeConnectionString = new SqlCeConnectionStringBuilder(Database.Connection.ConnectionString);
+            var key = "EB7196FD52C64D94885AADBD73FA26C0";
+            sqlCeConnectionString.Password = Functions.StringCipher.DecryptString(key, sqlCeConnectionString.Password);
+            Database.Connection.ConnectionString = sqlCeConnectionString.ConnectionString;
         }
 
         public virtual DbSet<Password> Passwords { get; set; }
