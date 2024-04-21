@@ -42,13 +42,15 @@
             this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteDatabase = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSecretKey = new System.Windows.Forms.TextBox();
+            this.btnGetOtpFromFile = new System.Windows.Forms.Button();
             this.btnQrCodeSecretKey = new System.Windows.Forms.Button();
             this.btnCopySecretKey = new System.Windows.Forms.Button();
             this.btnShowSecretKey = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSecretKey = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -74,10 +76,11 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerClearPassword = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveBackupDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openBackupDialog = new System.Windows.Forms.OpenFileDialog();
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.passwordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secretKeyDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
@@ -89,6 +92,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).BeginInit();
             this.mnuPassword.SuspendLayout();
@@ -115,7 +119,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(589, 369);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(645, 369);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -126,7 +130,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(589, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(645, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -220,13 +224,13 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.btnQrCodeSecretKey);
             this.panel1.Controls.Add(this.btnCopySecretKey);
             this.panel1.Controls.Add(this.btnShowSecretKey);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtSecretKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -234,8 +238,51 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(581, 86);
+            this.panel1.Size = new System.Drawing.Size(637, 86);
             this.panel1.TabIndex = 13;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.btnGetOtpFromFile, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtSecretKey, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(152, 41);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(380, 40);
+            this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // txtSecretKey
+            // 
+            this.txtSecretKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSecretKey.Enabled = false;
+            this.txtSecretKey.Location = new System.Drawing.Point(45, 6);
+            this.txtSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtSecretKey.Name = "txtSecretKey";
+            this.txtSecretKey.Size = new System.Drawing.Size(330, 27);
+            this.txtSecretKey.TabIndex = 7;
+            // 
+            // btnGetOtpFromFile
+            // 
+            this.btnGetOtpFromFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGetOtpFromFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGetOtpFromFile.Enabled = false;
+            this.btnGetOtpFromFile.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.QrCode;
+            this.btnGetOtpFromFile.Location = new System.Drawing.Point(5, 6);
+            this.btnGetOtpFromFile.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnGetOtpFromFile.Name = "btnGetOtpFromFile";
+            this.btnGetOtpFromFile.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGetOtpFromFile.Size = new System.Drawing.Size(30, 28);
+            this.btnGetOtpFromFile.TabIndex = 13;
+            this.btnGetOtpFromFile.Tag = "خواندن بارکد";
+            this.btnGetOtpFromFile.UseVisualStyleBackColor = true;
+            this.btnGetOtpFromFile.Click += new System.EventHandler(this.btnGetOtpFromFile_Click);
             // 
             // btnQrCodeSecretKey
             // 
@@ -243,11 +290,11 @@
             this.btnQrCodeSecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnQrCodeSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
             this.btnQrCodeSecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQrCodeSecretKey.Location = new System.Drawing.Point(8, 49);
+            this.btnQrCodeSecretKey.Location = new System.Drawing.Point(8, 47);
             this.btnQrCodeSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnQrCodeSecretKey.Name = "btnQrCodeSecretKey";
             this.btnQrCodeSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnQrCodeSecretKey.Size = new System.Drawing.Size(42, 25);
+            this.btnQrCodeSecretKey.Size = new System.Drawing.Size(42, 27);
             this.btnQrCodeSecretKey.TabIndex = 12;
             this.btnQrCodeSecretKey.Tag = "نمایش بارکد کد امنیتی";
             this.btnQrCodeSecretKey.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -260,11 +307,11 @@
             this.btnCopySecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCopySecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
             this.btnCopySecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopySecretKey.Location = new System.Drawing.Point(56, 49);
+            this.btnCopySecretKey.Location = new System.Drawing.Point(57, 47);
             this.btnCopySecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCopySecretKey.Name = "btnCopySecretKey";
             this.btnCopySecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCopySecretKey.Size = new System.Drawing.Size(42, 25);
+            this.btnCopySecretKey.Size = new System.Drawing.Size(42, 27);
             this.btnCopySecretKey.TabIndex = 11;
             this.btnCopySecretKey.Tag = "کپی کد امنیتی";
             this.btnCopySecretKey.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -277,11 +324,11 @@
             this.btnShowSecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnShowSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
             this.btnShowSecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShowSecretKey.Location = new System.Drawing.Point(108, 49);
+            this.btnShowSecretKey.Location = new System.Drawing.Point(106, 47);
             this.btnShowSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnShowSecretKey.Name = "btnShowSecretKey";
             this.btnShowSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnShowSecretKey.Size = new System.Drawing.Size(40, 25);
+            this.btnShowSecretKey.Size = new System.Drawing.Size(42, 28);
             this.btnShowSecretKey.TabIndex = 10;
             this.btnShowSecretKey.Tag = "نمایش کد امنیتی";
             this.btnShowSecretKey.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -293,7 +340,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(480, 53);
+            this.label4.Location = new System.Drawing.Point(536, 53);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 19);
@@ -305,7 +352,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(480, 12);
+            this.label3.Location = new System.Drawing.Point(536, 12);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 19);
@@ -316,29 +363,18 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(492, 53);
+            this.label2.Location = new System.Drawing.Point(548, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "کد امنیتی :";
             // 
-            // txtSecretKey
-            // 
-            this.txtSecretKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSecretKey.Enabled = false;
-            this.txtSecretKey.Location = new System.Drawing.Point(158, 47);
-            this.txtSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtSecretKey.Name = "txtSecretKey";
-            this.txtSecretKey.Size = new System.Drawing.Size(313, 27);
-            this.txtSecretKey.TabIndex = 7;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(492, 12);
+            this.label1.Location = new System.Drawing.Point(548, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 19);
@@ -353,7 +389,7 @@
             this.txtName.Location = new System.Drawing.Point(8, 6);
             this.txtName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(463, 27);
+            this.txtName.Size = new System.Drawing.Size(519, 27);
             this.txtName.TabIndex = 5;
             // 
             // panel3
@@ -368,7 +404,7 @@
             this.panel3.Location = new System.Drawing.Point(5, 323);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(579, 40);
+            this.panel3.Size = new System.Drawing.Size(635, 40);
             this.panel3.TabIndex = 11;
             // 
             // btnCancel
@@ -406,7 +442,7 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Delete1;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(474, 7);
+            this.btnDelete.Location = new System.Drawing.Point(530, 7);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 25);
@@ -421,7 +457,7 @@
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(509, 7);
+            this.btnEdit.Location = new System.Drawing.Point(565, 7);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(25, 25);
@@ -436,7 +472,7 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(544, 7);
+            this.btnAdd.Location = new System.Drawing.Point(600, 7);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 25);
@@ -475,7 +511,7 @@
             this.grdPassword.Name = "grdPassword";
             this.grdPassword.ReadOnly = true;
             this.grdPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grdPassword.Size = new System.Drawing.Size(581, 142);
+            this.grdPassword.Size = new System.Drawing.Size(637, 142);
             this.grdPassword.TabIndex = 12;
             this.grdPassword.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPassword_CellContentDoubleClick);
             // 
@@ -572,14 +608,14 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(581, 38);
+            this.panel2.Size = new System.Drawing.Size(637, 38);
             this.panel2.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(492, 9);
+            this.label6.Location = new System.Drawing.Point(548, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 19);
@@ -593,7 +629,7 @@
             this.txtNameSearch.Location = new System.Drawing.Point(8, 4);
             this.txtNameSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNameSearch.Name = "txtNameSearch";
-            this.txtNameSearch.Size = new System.Drawing.Size(463, 27);
+            this.txtNameSearch.Size = new System.Drawing.Size(519, 27);
             this.txtNameSearch.TabIndex = 10;
             this.txtNameSearch.TextChanged += new System.EventHandler(this.SearchData);
             // 
@@ -615,13 +651,13 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // saveFileDialog
+            // saveBackupDialog
             // 
-            this.saveFileDialog.Filter = "SQL Server Backup|*.sqlbak";
+            this.saveBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
             // 
-            // openFileDialog
+            // openBackupDialog
             // 
-            this.openFileDialog.Filter = "SQL Server Backup|*.sqlbak";
+            this.openBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
             // 
             // timerCounter
             // 
@@ -633,6 +669,10 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PasswordData";
             this.dataGridViewTextBoxColumn3.HeaderText = "PasswordData";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // openImageDialog
+            // 
+            this.openImageDialog.Filter = "Images|*.bmp;*.jpg;*.jpeg;*.png;";
             // 
             // passwordIDDataGridViewTextBoxColumn
             // 
@@ -692,7 +732,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 369);
+            this.ClientSize = new System.Drawing.Size(645, 369);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Calibri", 12F);
             this.Margin = new System.Windows.Forms.Padding(1);
@@ -706,6 +746,8 @@
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).EndInit();
             this.mnuPassword.ResumeLayout(false);
@@ -752,8 +794,8 @@
         private System.Windows.Forms.TextBox txtNameSearch;
         private System.Windows.Forms.Timer timerClearPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveBackupDialog;
+        private System.Windows.Forms.OpenFileDialog openBackupDialog;
         private System.Windows.Forms.Button btnQrCodeSecretKey;
         private System.Windows.Forms.DataGridView grdPassword;
         private System.Windows.Forms.ToolStripMenuItem دریافترمزعبوردرزمانToolStripMenuItem;
@@ -776,5 +818,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rowNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn counterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnGetOtpFromFile;
+        private System.Windows.Forms.OpenFileDialog openImageDialog;
     }
 }

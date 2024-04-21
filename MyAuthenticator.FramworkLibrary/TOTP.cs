@@ -4,6 +4,11 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using ZXing.Common;
+using ZXing;
+using System.Drawing;
+using ZXing.QrCode.Internal;
+using System.Web;
 
 namespace MyAuthenticator.FramworkLibrary
 {
@@ -96,5 +101,37 @@ namespace MyAuthenticator.FramworkLibrary
         {
             return $"otpauth://totp/{title}?secret={code}";
         }
+
+        public static Dictionary<string, string> ReadOtp(string fileName)
+        {
+            try
+            {
+                var res = new Dictionary<string, string>();
+                var options = new DecodingOptions { PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.QR_CODE }, TryHarder = true };
+                var reader = new BarcodeReader(null, null, ls => new GlobalHistogramBinarizer(ls)) { AutoRotate = false, TryInverted = false, Options = options };
+                using (Bitmap image = (Bitmap)Bitmap.FromFile(fileName))
+                {
+                    var otpResult = reader.Decode(image);
+                    if (otpResult != null)
+                    {
+                        var otpUri = new Uri(otpResult.Text);
+                        res.Add("Name", otpUri.Segments[1].TrimEnd('/'));
+                        string query = otpUri.Query;
+                        var queryParameters = HttpUtility.ParseQueryString(query);
+                        res.Add("Secret", queryParameters["secret"]);
+                        res.Add("Digits", queryParameters["digits"]);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return res;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+}
     }
 }

@@ -5,6 +5,7 @@ using MyAuthenticator.FramworkApp.Properties;
 using MyAuthenticator.FramworkData.Context;
 using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkLibrary;
+using System.Drawing;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -75,6 +76,7 @@ namespace MyAuthenticator.FramworkApp
             toolTip.SetToolTip(btnDelete, btnDelete.Tag.ToString());
             toolTip.SetToolTip(btnCancel, btnCancel.Tag.ToString());
             toolTip.SetToolTip(btnAcc, btnAcc.Tag.ToString());
+            toolTip.SetToolTip(btnGetOtpFromFile, btnGetOtpFromFile.Tag.ToString());
         }
 
         private void AddBinding()
@@ -123,6 +125,7 @@ namespace MyAuthenticator.FramworkApp
         {
             txtName.ReadOnly = !enable;
             txtSecretKey.ReadOnly = !enable;
+            btnGetOtpFromFile.Enabled = enable;
             btnShowSecretKey.Enabled = !enable;
             btnCopySecretKey.Enabled = !enable;
             btnQrCodeSecretKey.Enabled = !enable;
@@ -397,10 +400,10 @@ namespace MyAuthenticator.FramworkApp
         {
             if (ColtrolAutentication())
             {
-                saveFileDialog.Title = btnBackup.Text;
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                saveBackupDialog.Title = btnBackup.Text;
+                if (saveBackupDialog.ShowDialog() == DialogResult.OK)
                 {
-                    AuthenticatorRepository.Backup(saveFileDialog.FileName);
+                    AuthenticatorRepository.Backup(saveBackupDialog.FileName);
                 }
             }
         }
@@ -415,10 +418,10 @@ namespace MyAuthenticator.FramworkApp
             if (ColtrolAutentication())
             {
                 var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_restore__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
-                openFileDialog.Title = btnRestore.Text;
-                if (dialogResult == DialogResult.Yes && openFileDialog.ShowDialog() == DialogResult.OK)
+                openBackupDialog.Title = btnRestore.Text;
+                if (dialogResult == DialogResult.Yes && openBackupDialog.ShowDialog() == DialogResult.OK)
                 {
-                    AuthenticatorRepository.Restore(openFileDialog.FileName);
+                    AuthenticatorRepository.Restore(openBackupDialog.FileName);
                     AuthenticatorRepository.GetNewModel();
                     Program.Migration();
                     Program.InsertDefaultValue();
@@ -535,6 +538,20 @@ namespace MyAuthenticator.FramworkApp
         private static bool GetIsGetPasswordForRestoreBackup()
         {
             return SettingRepository.IsGetPasswordForRestoreBackup();
+        }
+
+        private void btnGetOtpFromFile_Click(object sender, EventArgs e)
+        {
+            openImageDialog.Title = btnGetOtpFromFile.Tag.ToString();
+            if (openImageDialog.ShowDialog() == DialogResult.OK)
+            {
+                var otp = TOTP.ReadOtp(openImageDialog.FileName);
+                if (otp != null)
+                {
+                    txtName.Text = otp["Name"];
+                    txtSecretKey.Text = otp["Secret"];
+                }
+            }
         }
     }
 }
