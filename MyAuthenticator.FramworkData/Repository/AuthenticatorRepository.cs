@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,19 +26,35 @@ namespace MyAuthenticator.FramworkData.Repository
 
         public static void Backup(string backupPath)
         {
-            var databasePath = GetDatabasePath();
-            ZipFile.CreateFromDirectory(databaseDirectory, databaseDirectory);
+            var databaseDirectory = GetDirectoryName(GetDatabasePath());
+            ZipFile.CreateFromDirectory(databaseDirectory, backupPath);
         }
 
         public static void Restore(string backupPath)
         {
-            var databasePath = GetDatabasePath();
-            File.Copy(backupPath, databasePath, true);
+            using (ZipArchive zip = ZipFile.Open(backupPath, ZipArchiveMode.Read))
+            {
+                //var databasePath = GetDatabasePath();
+                //var dataBaseFileName = Path.GetFileName(DatabaseLocalPath());
+                var databaseDirectory = GetDirectoryName(GetDatabasePath());
+                DeleteDatabase();
+                zip.ExtractToDirectory(databaseDirectory);
+            }
+        }
+
+        private static string GetDirectoryName(string fileName)
+        {
+            return Path.GetDirectoryName(fileName);
         }
 
         private static string GetDatabasePath()
         {
-            return Path.Combine(GetCurrentDirectory(), @"Database\Database.sdf");
+            return Path.Combine(GetCurrentDirectory(), DatabaseLocalPath());
+        }
+
+        private static string DatabaseLocalPath()
+        {
+            return @"Database\Database.sdf";
         }
 
         private static string GetCurrentDirectory()

@@ -5,8 +5,6 @@ using MyAuthenticator.FramworkApp.Properties;
 using MyAuthenticator.FramworkData.Context;
 using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkLibrary;
-using System.Threading;
-using System.Drawing;
 
 namespace MyAuthenticator.FramworkApp
 {
