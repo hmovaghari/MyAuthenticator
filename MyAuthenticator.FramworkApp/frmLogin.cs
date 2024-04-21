@@ -19,9 +19,8 @@ namespace MyAuthenticator.FramworkApp
         public frmLogin(ChangePasswordMode changePasswordMode)
         {
             InitializeComponent();
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(btnCancel, btnCancel.Tag.ToString());
-            toolTip.SetToolTip(btnLogin, btnLogin.Tag.ToString());
+            this.SetIcon();
+            SetToolTip();
             ChangePasswordMode = changePasswordMode;
             var isCreateOrChange = ChangePasswordMode == ChangePasswordMode.Create || changePasswordMode == ChangePasswordMode.Change;
             var isChange = changePasswordMode == ChangePasswordMode.Change;
@@ -46,6 +45,13 @@ namespace MyAuthenticator.FramworkApp
             Size = size;
             MaximumSize = size;
             MinimumSize = size;
+        }
+
+        private void SetToolTip()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnCancel, btnCancel.Tag.ToString());
+            toolTip.SetToolTip(btnLogin, btnLogin.Tag.ToString());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

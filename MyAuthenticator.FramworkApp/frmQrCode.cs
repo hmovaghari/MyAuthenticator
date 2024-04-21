@@ -9,6 +9,7 @@ namespace MyAuthenticator.FramworkApp
         public frmQrCode(string title, string code)
         {
             InitializeComponent();
+            this.SetIcon();
             var url = TOTP.GenerateUrl(title, code);
             imgQrCode.Text = url;
             txtAboveBarcode.Text = title;

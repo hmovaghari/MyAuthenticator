@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -102,6 +102,7 @@
     <Compile Include="frmQrCode.Designer.cs">
       <DependentUpon>frmQrCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="PasswordDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,37 +174,12 @@
     <None Include="Resources\Password.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon.ico" />
-    <None Include="Resources\Counter29.gif" />
-    <None Include="Resources\Counter28.gif" />
-    <None Include="Resources\Counter27.gif" />
-    <None Include="Resources\Counter26.gif" />
-    <None Include="Resources\Counter25.gif" />
-    <None Include="Resources\Counter24.gif" />
-    <None Include="Resources\Counter23.gif" />
-    <None Include="Resources\Counter22.gif" />
-    <None Include="Resources\Counter21.gif" />
-    <None Include="Resources\Counter20.gif" />
-    <None Include="Resources\Counter19.gif" />
-    <None Include="Resources\Counter18.gif" />
-    <None Include="Resources\Counter17.gif" />
-    <None Include="Resources\Counter16.gif" />
-    <None Include="Resources\Counter15.gif" />
-    <None Include="Resources\Counter14.gif" />
-    <None Include="Resources\Counter13.gif" />
-    <None Include="Resources\Counter12.gif" />
-    <None Include="Resources\Counter11.gif" />
-    <None Include="Resources\Counter10.gif" />
-    <None Include="Resources\Counter09.gif" />
-    <None Include="Resources\Counter08.gif" />
-    <None Include="Resources\Counter07.gif" />
-    <None Include="Resources\Counter06.gif" />
-    <None Include="Resources\Counter05.gif" />
-    <None Include="Resources\Counter04.gif" />
-    <None Include="Resources\Counter03.gif" />
-    <None Include="Resources\Counter02.gif" />
-    <None Include="Resources\Counter01.gif" />
-    <None Include="Resources\Counter30.gif" />
+    <None Include="Resources\Favicon.ico" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\DeleteDatabase.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\Backup.png" />
+    <None Include="Resources\Restore.png" />
     <None Include="Resources\Down.png" />
     <None Include="Resources\Up.png" />
     <None Include="Resources\Between.png" />

@@ -110,6 +110,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Backup {
+            get {
+                object obj = ResourceManager.GetObject("Backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Between {
             get {
                 object obj = ResourceManager.GetObject("Between", resourceCulture);
@@ -166,6 +176,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Database {
+            get {
+                object obj = ResourceManager.GetObject("Database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حذف.
         /// </summary>
         internal static string Delete {
@@ -187,6 +207,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeleteDatabase {
+            get {
+                object obj = ResourceManager.GetObject("DeleteDatabase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Down {
             get {
                 object obj = ResourceManager.GetObject("Down", resourceCulture);
@@ -201,6 +231,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("Edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Favicon {
+            get {
+                object obj = ResourceManager.GetObject("Favicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -288,6 +328,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restore {
+            get {
+                object obj = ResourceManager.GetObject("Restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره ردیف وارد نشده.
         /// </summary>
         internal static string RowNumber_is_empty {
@@ -311,6 +361,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Secret_key_is_empty {
             get {
                 return ResourceManager.GetString("Secret key is empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings {
+            get {
+                object obj = ResourceManager.GetObject("Settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

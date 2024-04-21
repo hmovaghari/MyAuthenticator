@@ -15,8 +15,8 @@ namespace MyAuthenticator.FramworkData.Repository
         private static string NullKey => "Null";
         private static string SaltKey => "Salt";
         private static string IsGetPasswordForShowSecretKey => "IsGetPasswordForShowSecretKey";
-        private static string IsGetPasswordForShowDynamicPasswordKey => "IsGetPasswordForShowDynamicPasswordKey";
-        private static string IsGetPasswordForRestoreBackupKey => "IsGetPasswordForRestoreBackupKey";
+        private static string IsGetPasswordForShowDynamicPasswordKey => "IsGetPasswordForShowDynamicPassword";
+        private static string IsGetPasswordForRestoreBackupKey => "IsGetPasswordForRestoreBackup";
 
         public static List<Setting> Get(Setting setting = null)
         {
