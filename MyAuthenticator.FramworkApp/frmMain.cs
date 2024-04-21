@@ -38,8 +38,8 @@ namespace MyAuthenticator.FramworkApp
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            SetSettings();
             SetToolTip();
+            SetSettings();
             SearchData(null, null);
         }
 
@@ -47,6 +47,12 @@ namespace MyAuthenticator.FramworkApp
         {
             ChangeImageBtnIsGetPasswordForShowSecretKey(GetIsGetPasswordForShowSecretKeys());
             ChangeImageBtnIsGetPasswordForShowDynamicPasswordKey(GetIsGetPasswordForShowDynamicPasswords());
+            ChangeImageBtnIsGetPasswordForRestoreBackup(GetIsGetPasswordForRestoreBackup());
+        }
+
+        private void ChangeImageBtnIsGetPasswordForRestoreBackup(bool isActive)
+        {
+            btnIsGetPasswordForRestoreBackup.Image = isActive ? Resources.Tick : null;
         }
 
         private void ChangeImageBtnIsGetPasswordForShowDynamicPasswordKey(bool isActive)
@@ -424,36 +430,51 @@ namespace MyAuthenticator.FramworkApp
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
-            saveFileDialog.Title = btnBackup.Text;
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (ColtrolAutentication())
             {
-                AuthenticatorRepository.Backup(saveFileDialog.FileName);
+                saveFileDialog.Title = btnBackup.Text;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    AuthenticatorRepository.Backup(saveFileDialog.FileName);
+                }
             }
+        }
+
+        private bool ColtrolAutentication()
+        {
+            return !GetIsGetPasswordForRestoreBackup() || Program.OpenLoginForm();
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_restore__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
-            openFileDialog.Title = btnRestore.Text;
-            if (dialogResult == DialogResult.Yes && openFileDialog.ShowDialog() == DialogResult.OK)
+            if (ColtrolAutentication())
             {
-                AuthenticatorRepository.Restore(openFileDialog.FileName);
-                Program.Migration();
-                Program.InsertDefaultValue();
-                AuthenticatorRepository.GetNewModel();
-                SearchData(null, null);
+                var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_restore__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
+                openFileDialog.Title = btnRestore.Text;
+                if (dialogResult == DialogResult.Yes && openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    AuthenticatorRepository.Restore(openFileDialog.FileName);
+                    AuthenticatorRepository.GetNewModel();
+                    Program.Migration();
+                    Program.InsertDefaultValue();
+                    SetSettings();
+                    SearchData(null, null);
+                }
             }
         }
 
         private void btnDeleteDatabase_Click(object sender, EventArgs e)
         {
-            var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_delete_the_database__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (ColtrolAutentication())
             {
-                AuthenticatorRepository.DeleteDatabase();
-                AuthenticatorRepository.CreateDatabase();
-                AuthenticatorRepository.GetNewModel();
-                SearchData(null, null);
+                var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_delete_the_database__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    AuthenticatorRepository.DeleteDatabase();
+                    AuthenticatorRepository.CreateDatabase();
+                    AuthenticatorRepository.GetNewModel();
+                    SearchData(null, null);
+                }
             }
         }
 
@@ -537,6 +558,18 @@ namespace MyAuthenticator.FramworkApp
                         break;
                 }
             }
+        }
+
+        private void btnIsGetPasswordForRestoreBackup_Click(object sender, EventArgs e)
+        {
+            var isActiveOld = GetIsGetPasswordForRestoreBackup();
+            SettingRepository.UpdateIsGetPasswordForRestoreBackup(!isActiveOld);
+            ChangeImageBtnIsGetPasswordForRestoreBackup(isActive: !isActiveOld);
+        }
+
+        private static bool GetIsGetPasswordForRestoreBackup()
+        {
+            return SettingRepository.IsGetPasswordForRestoreBackup();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace MyAuthenticator.FramworkData.Repository
         private static string SaltKey => "Salt";
         private static string IsGetPasswordForShowSecretKey => "IsGetPasswordForShowSecretKey";
         private static string IsGetPasswordForShowDynamicPasswordKey => "IsGetPasswordForShowDynamicPasswordKey";
+        private static string IsGetPasswordForRestoreBackupKey => "IsGetPasswordForRestoreBackupKey";
 
         public static List<Setting> Get(Setting setting = null)
         {
@@ -55,6 +56,11 @@ namespace MyAuthenticator.FramworkData.Repository
             if (isEmpty || settins.FirstOrDefault(s => s.Name == IsGetPasswordForShowDynamicPasswordKey) == null)
             {
                 insertList.Add(new Setting { Name = IsGetPasswordForShowDynamicPasswordKey, Value = true.ToString() });
+            }
+
+            if (isEmpty || settins.FirstOrDefault(s => s.Name == IsGetPasswordForRestoreBackupKey) == null)
+            {
+                insertList.Add(new Setting { Name = IsGetPasswordForRestoreBackupKey, Value = true.ToString() });
             }
 
             if (insertList.Count > 0)
@@ -163,6 +169,20 @@ namespace MyAuthenticator.FramworkData.Repository
         {
             var isGetPasswordForShowDynamicPasswordKey = Get(IsGetPasswordForShowDynamicPasswordKey);
             isGetPasswordForShowDynamicPasswordKey.Value = isGetPassword.ToString();
+            StaticClass.Model.SaveChanges();
+        }
+
+        public static bool IsGetPasswordForRestoreBackup()
+        {
+            var isGetPasswordForRestoreBackupKey = Get(IsGetPasswordForRestoreBackupKey);
+
+            return isGetPasswordForRestoreBackupKey?.Value == true.ToString();
+        }
+
+        public static void UpdateIsGetPasswordForRestoreBackup(bool isGetPassword)
+        {
+            var isGetPasswordForRestoreBackupKey = Get(IsGetPasswordForRestoreBackupKey);
+            isGetPasswordForRestoreBackupKey.Value = isGetPassword.ToString();
             StaticClass.Model.SaveChanges();
         }
     }

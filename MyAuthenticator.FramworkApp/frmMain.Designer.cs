@@ -70,6 +70,8 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
+            this.btnIsGetPasswordForRestoreBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPassword = new System.Windows.Forms.BindingSource(this.components);
             this.RowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +80,6 @@
             this.Up = new System.Windows.Forms.DataGridViewImageColumn();
             this.Down = new System.Windows.Forms.DataGridViewImageColumn();
             this.Between = new System.Windows.Forms.DataGridViewImageColumn();
-            this.passwordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secretKeyDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.passwordStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,7 +145,8 @@
             // 
             this.دریافترمزعبوردرزمانToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnIsGetPasswordForShowSecretKey,
-            this.btnIsGetPasswordForShowDynamicPasswordKey});
+            this.btnIsGetPasswordForShowDynamicPasswordKey,
+            this.btnIsGetPasswordForRestoreBackup});
             this.دریافترمزعبوردرزمانToolStripMenuItem.Name = "دریافترمزعبوردرزمانToolStripMenuItem";
             this.دریافترمزعبوردرزمانToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.دریافترمزعبوردرزمانToolStripMenuItem.Text = "دریافت رمز عبور در زمان";
@@ -156,14 +154,14 @@
             // btnIsGetPasswordForShowSecretKey
             // 
             this.btnIsGetPasswordForShowSecretKey.Name = "btnIsGetPasswordForShowSecretKey";
-            this.btnIsGetPasswordForShowSecretKey.Size = new System.Drawing.Size(178, 22);
+            this.btnIsGetPasswordForShowSecretKey.Size = new System.Drawing.Size(227, 22);
             this.btnIsGetPasswordForShowSecretKey.Text = "نمایش کد امنیتی";
             this.btnIsGetPasswordForShowSecretKey.Click += new System.EventHandler(this.btnIsGetPasswordForShowSecretKey_Click);
             // 
             // btnIsGetPasswordForShowDynamicPasswordKey
             // 
             this.btnIsGetPasswordForShowDynamicPasswordKey.Name = "btnIsGetPasswordForShowDynamicPasswordKey";
-            this.btnIsGetPasswordForShowDynamicPasswordKey.Size = new System.Drawing.Size(178, 22);
+            this.btnIsGetPasswordForShowDynamicPasswordKey.Size = new System.Drawing.Size(227, 22);
             this.btnIsGetPasswordForShowDynamicPasswordKey.Text = "نمایش کلمه عبور پویا";
             this.btnIsGetPasswordForShowDynamicPasswordKey.Click += new System.EventHandler(this.btnIsGetPasswordForShowDynamicPasswordKey_Click);
             // 
@@ -181,21 +179,21 @@
             // btnBackup
             // 
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(178, 22);
-            this.btnBackup.Text = "گرفتن نسخه پشتیبان";
+            this.btnBackup.Size = new System.Drawing.Size(180, 22);
+            this.btnBackup.Text = "دریافت نسخه پشتیبان";
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnRestore
             // 
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(178, 22);
+            this.btnRestore.Size = new System.Drawing.Size(180, 22);
             this.btnRestore.Text = "بازیابی نسخه پشتیبان";
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnDeleteDatabase
             // 
             this.btnDeleteDatabase.Name = "btnDeleteDatabase";
-            this.btnDeleteDatabase.Size = new System.Drawing.Size(178, 22);
+            this.btnDeleteDatabase.Size = new System.Drawing.Size(180, 22);
             this.btnDeleteDatabase.Text = "پاک کردن پایگاه داده";
             this.btnDeleteDatabase.Click += new System.EventHandler(this.btnDeleteDatabase_Click);
             // 
@@ -442,12 +440,7 @@
             this.Counter,
             this.Up,
             this.Down,
-            this.Between,
-            this.passwordIDDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.secretKeyDataGridViewImageColumn,
-            this.passwordStringDataGridViewTextBoxColumn,
-            this.passwordDataDataGridViewTextBoxColumn});
+            this.Between});
             this.grdPassword.DataSource = this.bsPassword;
             this.grdPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdPassword.Location = new System.Drawing.Point(4, 171);
@@ -549,6 +542,19 @@
             this.timerCounter.Interval = 1000;
             this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
             // 
+            // btnIsGetPasswordForRestoreBackup
+            // 
+            this.btnIsGetPasswordForRestoreBackup.Name = "btnIsGetPasswordForRestoreBackup";
+            this.btnIsGetPasswordForRestoreBackup.Size = new System.Drawing.Size(227, 22);
+            this.btnIsGetPasswordForRestoreBackup.Text = "دریافت یا بازیابی نسخه پشتیبان";
+            this.btnIsGetPasswordForRestoreBackup.Click += new System.EventHandler(this.btnIsGetPasswordForRestoreBackup_Click);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PasswordData";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PasswordData";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // bsPassword
             // 
             this.bsPassword.DataSource = typeof(MyAuthenticator.FramworkApp.PasswordDTO);
@@ -612,41 +618,6 @@
             this.Between.Name = "Between";
             this.Between.ReadOnly = true;
             this.Between.Width = 24;
-            // 
-            // passwordIDDataGridViewTextBoxColumn
-            // 
-            this.passwordIDDataGridViewTextBoxColumn.DataPropertyName = "PasswordID";
-            this.passwordIDDataGridViewTextBoxColumn.HeaderText = "PasswordID";
-            this.passwordIDDataGridViewTextBoxColumn.Name = "passwordIDDataGridViewTextBoxColumn";
-            this.passwordIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // secretKeyDataGridViewImageColumn
-            // 
-            this.secretKeyDataGridViewImageColumn.DataPropertyName = "SecretKey";
-            this.secretKeyDataGridViewImageColumn.HeaderText = "SecretKey";
-            this.secretKeyDataGridViewImageColumn.Name = "secretKeyDataGridViewImageColumn";
-            this.secretKeyDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // passwordStringDataGridViewTextBoxColumn
-            // 
-            this.passwordStringDataGridViewTextBoxColumn.DataPropertyName = "PasswordString";
-            this.passwordStringDataGridViewTextBoxColumn.HeaderText = "PasswordString";
-            this.passwordStringDataGridViewTextBoxColumn.Name = "passwordStringDataGridViewTextBoxColumn";
-            this.passwordStringDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataDataGridViewTextBoxColumn
-            // 
-            this.passwordDataDataGridViewTextBoxColumn.DataPropertyName = "PasswordData";
-            this.passwordDataDataGridViewTextBoxColumn.HeaderText = "PasswordData";
-            this.passwordDataDataGridViewTextBoxColumn.Name = "passwordDataDataGridViewTextBoxColumn";
-            this.passwordDataDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmMain
             // 
@@ -721,6 +692,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowSecretKey;
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowDynamicPasswordKey;
         private System.Windows.Forms.Timer timerCounter;
+        private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForRestoreBackup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordString;
@@ -728,10 +701,5 @@
         private System.Windows.Forms.DataGridViewImageColumn Up;
         private System.Windows.Forms.DataGridViewImageColumn Down;
         private System.Windows.Forms.DataGridViewImageColumn Between;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn secretKeyDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordStringDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataDataGridViewTextBoxColumn;
     }
 }
