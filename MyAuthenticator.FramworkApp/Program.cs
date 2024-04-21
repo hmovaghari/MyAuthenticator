@@ -16,6 +16,7 @@ namespace MyAuthenticator.FramworkApp
         [STAThread]
         static void Main()
         {
+            //Test
             Migration();
             InsertDefaultValue();
             Application.EnableVisualStyles();
