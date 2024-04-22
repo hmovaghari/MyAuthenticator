@@ -34,9 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 41);
+            this.ClientSize = new System.Drawing.Size(278, 41);
             this.Name = "frmSnippingTool";
-            this.Text = "frmSnippingTool";
+            this.Text = "خواندن بارکد از صفحه نمایش";
             this.ResumeLayout(false);
 
         }

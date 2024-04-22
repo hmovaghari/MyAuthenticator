@@ -22,6 +22,7 @@ namespace MyAuthenticator.FramworkApp
         public frmSnippingTool(Image screenShot)
         {
             InitializeComponent();
+            this.SetIcon();
             this.BackgroundImage = screenShot;
             this.BackgroundImageLayout = ImageLayout.Stretch;
             this.ShowInTaskbar = false;
@@ -133,6 +134,7 @@ namespace MyAuthenticator.FramworkApp
                 e.Graphics.DrawRectangle(pen, newRectangle);
             }
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             // Allow canceling the snip with the Escape key
