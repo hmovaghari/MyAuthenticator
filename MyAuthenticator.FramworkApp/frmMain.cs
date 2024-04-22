@@ -77,6 +77,7 @@ namespace MyAuthenticator.FramworkApp
             toolTip.SetToolTip(btnCancel, btnCancel.Tag.ToString());
             toolTip.SetToolTip(btnAcc, btnAcc.Tag.ToString());
             toolTip.SetToolTip(btnGetOtpFromFile, btnGetOtpFromFile.Tag.ToString());
+            toolTip.SetToolTip(btnGetOtpFromSnip, btnGetOtpFromSnip.Tag.ToString());
         }
 
         private void AddBinding()
@@ -126,6 +127,7 @@ namespace MyAuthenticator.FramworkApp
             txtName.ReadOnly = !enable;
             txtSecretKey.ReadOnly = !enable;
             btnGetOtpFromFile.Enabled = enable;
+            btnGetOtpFromSnip.Enabled = enable;
             btnShowSecretKey.Enabled = !enable;
             btnCopySecretKey.Enabled = !enable;
             btnQrCodeSecretKey.Enabled = !enable;
@@ -546,11 +548,27 @@ namespace MyAuthenticator.FramworkApp
             if (openImageDialog.ShowDialog() == DialogResult.OK)
             {
                 var otp = TOTP.ReadOtp(openImageDialog.FileName);
-                if (otp != null)
-                {
-                    txtName.Text = otp["Name"];
-                    txtSecretKey.Text = otp["Secret"];
-                }
+                FillDataFromOpt(otp);
+            }
+        }
+
+        private void FillDataFromOpt(Dictionary<string, string> otp)
+        {
+            if (otp != null)
+            {
+                txtName.Text = otp["Name"];
+                txtSecretKey.Text = otp["Secret"];
+            }
+        }
+
+        private void btnGetOtpFromSnip_Click(object sender, EventArgs e)
+        {
+            var bmp = frmSnippingTool.Snip();
+            if (bmp != null)
+            {
+                ((Bitmap)bmp).Save("TestHM.bmp");
+                var otp = TOTP.ReadOtp((Bitmap)bmp);
+                FillDataFromOpt(otp);
             }
         }
     }

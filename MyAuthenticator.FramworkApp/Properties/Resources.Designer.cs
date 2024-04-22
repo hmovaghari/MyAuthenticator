@@ -245,6 +245,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileReader {
+            get {
+                object obj = ResourceManager.GetObject("FileReader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کنترل ورودی.
         /// </summary>
         internal static string Input_control {
@@ -352,6 +362,16 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Save_data {
             get {
                 return ResourceManager.GetString("Save data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ScreenCapture {
+            get {
+                object obj = ResourceManager.GetObject("ScreenCapture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
