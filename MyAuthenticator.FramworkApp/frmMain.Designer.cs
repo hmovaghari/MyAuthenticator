@@ -43,6 +43,7 @@
             this.btnDeleteDatabase = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGetOtpFromCamera = new System.Windows.Forms.Button();
             this.btnGetOtpFromSnip = new System.Windows.Forms.Button();
             this.btnGetOtpFromFile = new System.Windows.Forms.Button();
             this.txtSecretKey = new System.Windows.Forms.TextBox();
@@ -246,10 +247,12 @@
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.btnGetOtpFromCamera, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGetOtpFromSnip, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGetOtpFromFile, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtSecretKey, 0, 0);
@@ -260,12 +263,27 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(380, 40);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
+            // btnGetOtpFromCamera
+            // 
+            this.btnGetOtpFromCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGetOtpFromCamera.Enabled = false;
+            this.btnGetOtpFromCamera.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.CameraCapture;
+            this.btnGetOtpFromCamera.Location = new System.Drawing.Point(5, 6);
+            this.btnGetOtpFromCamera.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnGetOtpFromCamera.Name = "btnGetOtpFromCamera";
+            this.btnGetOtpFromCamera.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGetOtpFromCamera.Size = new System.Drawing.Size(30, 28);
+            this.btnGetOtpFromCamera.TabIndex = 15;
+            this.btnGetOtpFromCamera.Tag = "خواندن بارکد از دوربین";
+            this.btnGetOtpFromCamera.UseVisualStyleBackColor = true;
+            this.btnGetOtpFromCamera.Click += new System.EventHandler(this.btnGetOtpFromCamera_Click);
+            // 
             // btnGetOtpFromSnip
             // 
             this.btnGetOtpFromSnip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetOtpFromSnip.Enabled = false;
             this.btnGetOtpFromSnip.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.ScreenCapture;
-            this.btnGetOtpFromSnip.Location = new System.Drawing.Point(5, 6);
+            this.btnGetOtpFromSnip.Location = new System.Drawing.Point(45, 6);
             this.btnGetOtpFromSnip.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGetOtpFromSnip.Name = "btnGetOtpFromSnip";
             this.btnGetOtpFromSnip.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -280,7 +298,7 @@
             this.btnGetOtpFromFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetOtpFromFile.Enabled = false;
             this.btnGetOtpFromFile.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.FileReader;
-            this.btnGetOtpFromFile.Location = new System.Drawing.Point(45, 6);
+            this.btnGetOtpFromFile.Location = new System.Drawing.Point(85, 6);
             this.btnGetOtpFromFile.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGetOtpFromFile.Name = "btnGetOtpFromFile";
             this.btnGetOtpFromFile.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -295,10 +313,10 @@
             this.txtSecretKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSecretKey.Enabled = false;
-            this.txtSecretKey.Location = new System.Drawing.Point(85, 6);
+            this.txtSecretKey.Location = new System.Drawing.Point(125, 6);
             this.txtSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSecretKey.Name = "txtSecretKey";
-            this.txtSecretKey.Size = new System.Drawing.Size(290, 27);
+            this.txtSecretKey.Size = new System.Drawing.Size(250, 27);
             this.txtSecretKey.TabIndex = 7;
             // 
             // btnQrCodeSecretKey
@@ -839,5 +857,6 @@
         private System.Windows.Forms.Button btnGetOtpFromFile;
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.Button btnGetOtpFromSnip;
+        private System.Windows.Forms.Button btnGetOtpFromCamera;
     }
 }
