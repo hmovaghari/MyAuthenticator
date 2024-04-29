@@ -45,7 +45,7 @@
             this.imgQrCode.Location = new System.Drawing.Point(3, 24);
             this.imgQrCode.Name = "imgQrCode";
             this.imgQrCode.QuietZoneModule = Gma.QrCodeNet.Encoding.Windows.Render.QuietZoneModules.Two;
-            this.imgQrCode.Size = new System.Drawing.Size(208, 206);
+            this.imgQrCode.Size = new System.Drawing.Size(226, 223);
             this.imgQrCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgQrCode.TabIndex = 1;
             this.imgQrCode.TabStop = false;
@@ -65,17 +65,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(214, 256);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 273);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // txtBelowBarcode
             // 
             this.txtBelowBarcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBelowBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBelowBarcode.Location = new System.Drawing.Point(3, 236);
+            this.txtBelowBarcode.Location = new System.Drawing.Point(3, 253);
             this.txtBelowBarcode.Name = "txtBelowBarcode";
             this.txtBelowBarcode.ReadOnly = true;
-            this.txtBelowBarcode.Size = new System.Drawing.Size(208, 13);
+            this.txtBelowBarcode.Size = new System.Drawing.Size(226, 13);
             this.txtBelowBarcode.TabIndex = 3;
             this.txtBelowBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -86,7 +86,7 @@
             this.txtAboveBarcode.Location = new System.Drawing.Point(3, 3);
             this.txtAboveBarcode.Name = "txtAboveBarcode";
             this.txtAboveBarcode.ReadOnly = true;
-            this.txtAboveBarcode.Size = new System.Drawing.Size(208, 13);
+            this.txtAboveBarcode.Size = new System.Drawing.Size(226, 13);
             this.txtAboveBarcode.TabIndex = 2;
             this.txtAboveBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 256);
+            this.ClientSize = new System.Drawing.Size(232, 273);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmQrCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

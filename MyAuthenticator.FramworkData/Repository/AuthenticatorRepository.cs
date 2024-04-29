@@ -72,5 +72,14 @@ namespace MyAuthenticator.FramworkData.Repository
         {
             StaticClass.Model.Database.Create();
         }
+
+        public static void CreateDatabaseFolder()
+        {
+            var databaseDirectory = GetDirectoryName(GetDatabasePath());
+            if (!Directory.Exists(databaseDirectory))
+            {
+                Directory.CreateDirectory(databaseDirectory);
+            }
+        }
     }
 }

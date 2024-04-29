@@ -30,18 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenu = new System.Windows.Forms.ToolStrip();
+            this.toolStripSettings = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnChangePassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.دریافترمزعبوردرزمانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCheckAuthenticationWhen = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIsGetPasswordForShowSecretKey = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIsGetPasswordForShowDynamicPasswordKey = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIsGetPasswordForRestoreBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripChangeLanguage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDatabase = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteDatabase = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlData = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGetOtpFromCamera = new System.Windows.Forms.Button();
             this.btnGetOtpFromSnip = new System.Windows.Forms.Button();
@@ -51,11 +54,9 @@
             this.btnCopySecretKey = new System.Windows.Forms.Button();
             this.btnShowSecretKey = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblSecretKey = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAcc = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -72,16 +73,8 @@
             this.Up = new System.Windows.Forms.DataGridViewImageColumn();
             this.Down = new System.Windows.Forms.DataGridViewImageColumn();
             this.Between = new System.Windows.Forms.DataGridViewImageColumn();
-            this.passwordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secretKeyDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.passwordStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.counterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsPassword = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.lblSearchName = new System.Windows.Forms.Label();
             this.txtNameSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerClearPassword = new System.Windows.Forms.Timer(this.components);
@@ -91,26 +84,34 @@
             this.timerCounter = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.passwordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secretKeyDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.passwordStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.counterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPassword = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.toolStripMenu.SuspendLayout();
+            this.pnlData.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlCrud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).BeginInit();
             this.mnuPassword.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.toolStripMenu, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlData, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlCrud, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.grdPassword, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pnlSearch, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -124,47 +125,48 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(645, 369);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // toolStrip1
+            // toolStripMenu
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1,
-            this.toolStripDropDownButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(645, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSettings,
+            this.toolStripDatabase});
+            this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
+            this.toolStripMenu.Name = "toolStripMenu";
+            this.toolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripMenu.Size = new System.Drawing.Size(645, 25);
+            this.toolStripMenu.TabIndex = 1;
+            this.toolStripMenu.Text = "toolStrip1";
             // 
-            // toolStripDropDownButton1
+            // toolStripSettings
             // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnChangePassword,
-            this.دریافترمزعبوردرزمانToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Settings;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(79, 22);
-            this.toolStripDropDownButton1.Text = "تنظیمات";
+            this.toolStripCheckAuthenticationWhen,
+            this.toolStripChangeLanguage});
+            this.toolStripSettings.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Settings1;
+            this.toolStripSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSettings.Name = "toolStripSettings";
+            this.toolStripSettings.Size = new System.Drawing.Size(79, 22);
+            this.toolStripSettings.Text = "تنظیمات";
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnChangePassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(193, 22);
             this.btnChangePassword.Text = "تغییر رمز عبور";
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
-            // دریافترمزعبوردرزمانToolStripMenuItem
+            // toolStripCheckAuthenticationWhen
             // 
-            this.دریافترمزعبوردرزمانToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCheckAuthenticationWhen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnIsGetPasswordForShowSecretKey,
             this.btnIsGetPasswordForShowDynamicPasswordKey,
             this.btnIsGetPasswordForRestoreBackup});
-            this.دریافترمزعبوردرزمانToolStripMenuItem.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
-            this.دریافترمزعبوردرزمانToolStripMenuItem.Name = "دریافترمزعبوردرزمانToolStripMenuItem";
-            this.دریافترمزعبوردرزمانToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.دریافترمزعبوردرزمانToolStripMenuItem.Text = "دریافت رمز عبور در زمان";
+            this.toolStripCheckAuthenticationWhen.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
+            this.toolStripCheckAuthenticationWhen.Name = "toolStripCheckAuthenticationWhen";
+            this.toolStripCheckAuthenticationWhen.Size = new System.Drawing.Size(193, 22);
+            this.toolStripCheckAuthenticationWhen.Text = "دریافت رمز عبور در زمان";
             // 
             // btnIsGetPasswordForShowSecretKey
             // 
@@ -187,21 +189,28 @@
             this.btnIsGetPasswordForRestoreBackup.Text = "دریافت یا بازیابی نسخه پشتیبان";
             this.btnIsGetPasswordForRestoreBackup.Click += new System.EventHandler(this.btnIsGetPasswordForRestoreBackup_Click);
             // 
-            // toolStripDropDownButton2
+            // toolStripChangeLanguage
             // 
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripChangeLanguage.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Language1;
+            this.toolStripChangeLanguage.Name = "toolStripChangeLanguage";
+            this.toolStripChangeLanguage.Size = new System.Drawing.Size(193, 22);
+            this.toolStripChangeLanguage.Text = "تغییر زبان";
+            // 
+            // toolStripDatabase
+            // 
+            this.toolStripDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnBackup,
             this.btnRestore,
             this.btnDeleteDatabase});
-            this.toolStripDropDownButton2.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Database;
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(86, 22);
-            this.toolStripDropDownButton2.Text = "پایگاه داده";
+            this.toolStripDatabase.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Database1;
+            this.toolStripDatabase.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDatabase.Name = "toolStripDatabase";
+            this.toolStripDatabase.Size = new System.Drawing.Size(86, 22);
+            this.toolStripDatabase.Text = "پایگاه داده";
             // 
             // btnBackup
             // 
-            this.btnBackup.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Backup;
+            this.btnBackup.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Backup1;
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(180, 22);
             this.btnBackup.Text = "دریافت نسخه پشتیبان";
@@ -209,7 +218,7 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Restore;
+            this.btnRestore.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Restore1;
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(180, 22);
             this.btnRestore.Text = "بازیابی نسخه پشتیبان";
@@ -217,31 +226,54 @@
             // 
             // btnDeleteDatabase
             // 
-            this.btnDeleteDatabase.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.DeleteDatabase;
+            this.btnDeleteDatabase.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.DeleteDatabase1;
             this.btnDeleteDatabase.Name = "btnDeleteDatabase";
             this.btnDeleteDatabase.Size = new System.Drawing.Size(180, 22);
             this.btnDeleteDatabase.Text = "پاک کردن پایگاه داده";
             this.btnDeleteDatabase.Click += new System.EventHandler(this.btnDeleteDatabase_Click);
             // 
-            // panel1
+            // pnlData
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tableLayoutPanel2);
-            this.panel1.Controls.Add(this.btnQrCodeSecretKey);
-            this.panel1.Controls.Add(this.btnCopySecretKey);
-            this.panel1.Controls.Add(this.btnShowSecretKey);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 31);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(637, 86);
-            this.panel1.TabIndex = 13;
+            this.pnlData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlData.Controls.Add(this.lblSecretKey);
+            this.pnlData.Controls.Add(this.lblName);
+            this.pnlData.Controls.Add(this.txtName);
+            this.pnlData.Controls.Add(this.label3);
+            this.pnlData.Controls.Add(this.tableLayoutPanel2);
+            this.pnlData.Controls.Add(this.btnQrCodeSecretKey);
+            this.pnlData.Controls.Add(this.btnCopySecretKey);
+            this.pnlData.Controls.Add(this.btnShowSecretKey);
+            this.pnlData.Controls.Add(this.label4);
+            this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlData.Location = new System.Drawing.Point(4, 31);
+            this.pnlData.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlData.Name = "pnlData";
+            this.pnlData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pnlData.Size = new System.Drawing.Size(637, 86);
+            this.pnlData.TabIndex = 13;
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(8, 6);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(529, 27);
+            this.txtName.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(541, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 19);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "*";
             // 
             // tableLayoutPanel2
             // 
@@ -260,14 +292,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(380, 40);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 40);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // btnGetOtpFromCamera
             // 
             this.btnGetOtpFromCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetOtpFromCamera.Enabled = false;
-            this.btnGetOtpFromCamera.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.CameraCapture;
+            this.btnGetOtpFromCamera.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.CameraCapture1;
             this.btnGetOtpFromCamera.Location = new System.Drawing.Point(5, 6);
             this.btnGetOtpFromCamera.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGetOtpFromCamera.Name = "btnGetOtpFromCamera";
@@ -282,7 +314,7 @@
             // 
             this.btnGetOtpFromSnip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetOtpFromSnip.Enabled = false;
-            this.btnGetOtpFromSnip.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.ScreenCapture;
+            this.btnGetOtpFromSnip.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.ScreenCapture1;
             this.btnGetOtpFromSnip.Location = new System.Drawing.Point(45, 6);
             this.btnGetOtpFromSnip.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGetOtpFromSnip.Name = "btnGetOtpFromSnip";
@@ -297,7 +329,7 @@
             // 
             this.btnGetOtpFromFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetOtpFromFile.Enabled = false;
-            this.btnGetOtpFromFile.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.FileReader;
+            this.btnGetOtpFromFile.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.FileReader1;
             this.btnGetOtpFromFile.Location = new System.Drawing.Point(85, 6);
             this.btnGetOtpFromFile.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGetOtpFromFile.Name = "btnGetOtpFromFile";
@@ -316,19 +348,19 @@
             this.txtSecretKey.Location = new System.Drawing.Point(125, 6);
             this.txtSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSecretKey.Name = "txtSecretKey";
-            this.txtSecretKey.Size = new System.Drawing.Size(250, 27);
+            this.txtSecretKey.Size = new System.Drawing.Size(260, 27);
             this.txtSecretKey.TabIndex = 7;
             // 
             // btnQrCodeSecretKey
             // 
-            this.btnQrCodeSecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.QrCode;
+            this.btnQrCodeSecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.QrCode1;
             this.btnQrCodeSecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnQrCodeSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnQrCodeSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnQrCodeSecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQrCodeSecretKey.Location = new System.Drawing.Point(8, 47);
             this.btnQrCodeSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnQrCodeSecretKey.Name = "btnQrCodeSecretKey";
-            this.btnQrCodeSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnQrCodeSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnQrCodeSecretKey.Size = new System.Drawing.Size(42, 27);
             this.btnQrCodeSecretKey.TabIndex = 12;
             this.btnQrCodeSecretKey.Tag = "نمایش بارکد کد امنیتی";
@@ -338,14 +370,14 @@
             // 
             // btnCopySecretKey
             // 
-            this.btnCopySecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.Copy;
+            this.btnCopySecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.Copy1;
             this.btnCopySecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCopySecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnCopySecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnCopySecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopySecretKey.Location = new System.Drawing.Point(57, 47);
             this.btnCopySecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCopySecretKey.Name = "btnCopySecretKey";
-            this.btnCopySecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCopySecretKey.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCopySecretKey.Size = new System.Drawing.Size(42, 27);
             this.btnCopySecretKey.TabIndex = 11;
             this.btnCopySecretKey.Tag = "کپی کد امنیتی";
@@ -355,14 +387,14 @@
             // 
             // btnShowSecretKey
             // 
-            this.btnShowSecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.Show;
+            this.btnShowSecretKey.BackgroundImage = global::MyAuthenticator.FramworkApp.Properties.Resources.Show1;
             this.btnShowSecretKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnShowSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnShowSecretKey.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnShowSecretKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShowSecretKey.Location = new System.Drawing.Point(106, 47);
             this.btnShowSecretKey.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnShowSecretKey.Name = "btnShowSecretKey";
-            this.btnShowSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnShowSecretKey.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnShowSecretKey.Size = new System.Drawing.Size(42, 27);
             this.btnShowSecretKey.TabIndex = 10;
             this.btnShowSecretKey.Tag = "نمایش کد امنیتی";
@@ -375,81 +407,59 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(536, 53);
+            this.label4.Location = new System.Drawing.Point(541, 50);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "*";
             // 
-            // label3
+            // lblSecretKey
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(536, 12);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 19);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "*";
+            this.lblSecretKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSecretKey.AutoSize = true;
+            this.lblSecretKey.Location = new System.Drawing.Point(553, 50);
+            this.lblSecretKey.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblSecretKey.Name = "lblSecretKey";
+            this.lblSecretKey.Size = new System.Drawing.Size(67, 19);
+            this.lblSecretKey.TabIndex = 6;
+            this.lblSecretKey.Text = "کد امنیتی :";
             // 
-            // label2
+            // lblName
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(548, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "کد امنیتی :";
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(553, 14);
+            this.lblName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(32, 19);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "نام :";
             // 
-            // label1
+            // pnlCrud
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "نام :";
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(8, 6);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(519, 27);
-            this.txtName.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Controls.Add(this.btnAcc);
-            this.panel3.Controls.Add(this.btnDelete);
-            this.panel3.Controls.Add(this.btnEdit);
-            this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(5, 323);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(635, 40);
-            this.panel3.TabIndex = 11;
+            this.pnlCrud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCrud.Controls.Add(this.btnCancel);
+            this.pnlCrud.Controls.Add(this.btnAcc);
+            this.pnlCrud.Controls.Add(this.btnDelete);
+            this.pnlCrud.Controls.Add(this.btnEdit);
+            this.pnlCrud.Controls.Add(this.btnAdd);
+            this.pnlCrud.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCrud.Location = new System.Drawing.Point(5, 323);
+            this.pnlCrud.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlCrud.Name = "pnlCrud";
+            this.pnlCrud.Size = new System.Drawing.Size(635, 40);
+            this.pnlCrud.TabIndex = 11;
             // 
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel;
+            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(42, 7);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCancel.Size = new System.Drawing.Size(25, 25);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Tag = "انصراف";
@@ -460,11 +470,12 @@
             // btnAcc
             // 
             this.btnAcc.Enabled = false;
-            this.btnAcc.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Accept;
+            this.btnAcc.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Accept1;
             this.btnAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcc.Location = new System.Drawing.Point(7, 7);
             this.btnAcc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnAcc.Name = "btnAcc";
+            this.btnAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAcc.Size = new System.Drawing.Size(25, 25);
             this.btnAcc.TabIndex = 3;
             this.btnAcc.Tag = "تائید";
@@ -480,6 +491,7 @@
             this.btnDelete.Location = new System.Drawing.Point(530, 7);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDelete.Size = new System.Drawing.Size(25, 25);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Tag = "حذف";
@@ -490,11 +502,12 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Edit;
+            this.btnEdit.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Edit1;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(565, 7);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEdit.Size = new System.Drawing.Size(25, 25);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Tag = "ویرایش";
@@ -505,11 +518,12 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Add;
+            this.btnAdd.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Add1;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(600, 7);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAdd.Size = new System.Drawing.Size(25, 25);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Tag = "ایجاد";
@@ -580,22 +594,22 @@
             this.btnShowPassword,
             this.btnCopyPassword});
             this.mnuPassword.Name = "mnuPassword";
-            this.mnuPassword.Size = new System.Drawing.Size(158, 48);
+            this.mnuPassword.Size = new System.Drawing.Size(179, 48);
             // 
             // btnShowPassword
             // 
-            this.btnShowPassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnShowPassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(157, 22);
-            this.btnShowPassword.Text = "نمایش کلمه عبور";
+            this.btnShowPassword.Size = new System.Drawing.Size(178, 22);
+            this.btnShowPassword.Text = "نمایش کلمه عبور پویا";
             this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
             // btnCopyPassword
             // 
-            this.btnCopyPassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password;
+            this.btnCopyPassword.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Password1;
             this.btnCopyPassword.Name = "btnCopyPassword";
-            this.btnCopyPassword.Size = new System.Drawing.Size(157, 22);
-            this.btnCopyPassword.Text = "کپی کلمه عبور";
+            this.btnCopyPassword.Size = new System.Drawing.Size(178, 22);
+            this.btnCopyPassword.Text = "کپی کلمه عبور پویا";
             this.btnCopyPassword.Click += new System.EventHandler(this.btnCopyPassword_Click);
             // 
             // Counter
@@ -610,7 +624,7 @@
             // 
             this.Up.Description = "Up";
             this.Up.HeaderText = "";
-            this.Up.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Up;
+            this.Up.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Up1;
             this.Up.Name = "Up";
             this.Up.ReadOnly = true;
             this.Up.Width = 24;
@@ -619,7 +633,7 @@
             // 
             this.Down.Description = "Down";
             this.Down.HeaderText = "";
-            this.Down.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Down;
+            this.Down.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Down1;
             this.Down.Name = "Down";
             this.Down.ReadOnly = true;
             this.Down.Width = 24;
@@ -628,10 +642,86 @@
             // 
             this.Between.Description = "Between";
             this.Between.HeaderText = "";
-            this.Between.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Between;
+            this.Between.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Between1;
             this.Between.Name = "Between";
             this.Between.ReadOnly = true;
             this.Between.Width = 24;
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Controls.Add(this.lblSearchName);
+            this.pnlSearch.Controls.Add(this.txtNameSearch);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(4, 125);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pnlSearch.Size = new System.Drawing.Size(637, 38);
+            this.pnlSearch.TabIndex = 14;
+            // 
+            // lblSearchName
+            // 
+            this.lblSearchName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSearchName.AutoSize = true;
+            this.lblSearchName.Location = new System.Drawing.Point(553, 7);
+            this.lblSearchName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblSearchName.Name = "lblSearchName";
+            this.lblSearchName.Size = new System.Drawing.Size(60, 19);
+            this.lblSearchName.TabIndex = 9;
+            this.lblSearchName.Text = "جستجو :";
+            // 
+            // txtNameSearch
+            // 
+            this.txtNameSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNameSearch.Location = new System.Drawing.Point(8, 4);
+            this.txtNameSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNameSearch.Name = "txtNameSearch";
+            this.txtNameSearch.Size = new System.Drawing.Size(529, 27);
+            this.txtNameSearch.TabIndex = 10;
+            this.txtNameSearch.TextChanged += new System.EventHandler(this.SearchData);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PasswordData";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PasswordData";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // timerClearPassword
+            // 
+            this.timerClearPassword.Tick += new System.EventHandler(this.timerClearPassword_Tick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PasswordData";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PasswordData";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // saveBackupDialog
+            // 
+            this.saveBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
+            // 
+            // openBackupDialog
+            // 
+            this.openBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
+            // 
+            // timerCounter
+            // 
+            this.timerCounter.Interval = 1000;
+            this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PasswordData";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PasswordData";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // openImageDialog
+            // 
+            this.openImageDialog.Filter = "Images|*.bmp;*.jpg;*.jpeg;*.png;";
             // 
             // passwordIDDataGridViewTextBoxColumn
             // 
@@ -687,82 +777,6 @@
             this.bsPassword.DataSource = typeof(MyAuthenticator.FramworkApp.PasswordDTO);
             this.bsPassword.CurrentChanged += new System.EventHandler(this.bsPassword_CurrentChanged);
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtNameSearch);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 125);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(637, 38);
-            this.panel2.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(548, 9);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 19);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "جستجو نام :";
-            // 
-            // txtNameSearch
-            // 
-            this.txtNameSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNameSearch.Location = new System.Drawing.Point(8, 4);
-            this.txtNameSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtNameSearch.Name = "txtNameSearch";
-            this.txtNameSearch.Size = new System.Drawing.Size(519, 27);
-            this.txtNameSearch.TabIndex = 10;
-            this.txtNameSearch.TextChanged += new System.EventHandler(this.SearchData);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PasswordData";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PasswordData";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // timerClearPassword
-            // 
-            this.timerClearPassword.Tick += new System.EventHandler(this.timerClearPassword_Tick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PasswordData";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PasswordData";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // saveBackupDialog
-            // 
-            this.saveBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
-            // 
-            // openBackupDialog
-            // 
-            this.openBackupDialog.Filter = "SQL Server Backup|*.sqlbak";
-            // 
-            // timerCounter
-            // 
-            this.timerCounter.Interval = 1000;
-            this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PasswordData";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PasswordData";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // openImageDialog
-            // 
-            this.openImageDialog.Filter = "Images|*.bmp;*.jpg;*.jpeg;*.png;";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -773,22 +787,22 @@
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "رمز دو عاملی";
+            this.Text = "اعتبارسنجی دوعاملی";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.toolStripMenu.ResumeLayout(false);
+            this.toolStripMenu.PerformLayout();
+            this.pnlData.ResumeLayout(false);
+            this.pnlData.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.pnlCrud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdPassword)).EndInit();
             this.mnuPassword.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPassword)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -796,26 +810,26 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStrip toolStripMenu;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripSettings;
         private System.Windows.Forms.ToolStripMenuItem btnChangePassword;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDatabase;
         private System.Windows.Forms.ToolStripMenuItem btnBackup;
         private System.Windows.Forms.ToolStripMenuItem btnRestore;
         private System.Windows.Forms.ToolStripMenuItem btnDeleteDatabase;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlCrud;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAcc;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.BindingSource bsPassword;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSecretKey;
         private System.Windows.Forms.TextBox txtSecretKey;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnShowSecretKey;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -824,8 +838,8 @@
         private System.Windows.Forms.Button btnCopySecretKey;
         private System.Windows.Forms.ToolStripMenuItem btnCopyPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlSearch;
+        private System.Windows.Forms.Label lblSearchName;
         private System.Windows.Forms.TextBox txtNameSearch;
         private System.Windows.Forms.Timer timerClearPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -833,7 +847,7 @@
         private System.Windows.Forms.OpenFileDialog openBackupDialog;
         private System.Windows.Forms.Button btnQrCodeSecretKey;
         private System.Windows.Forms.DataGridView grdPassword;
-        private System.Windows.Forms.ToolStripMenuItem دریافترمزعبوردرزمانToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripCheckAuthenticationWhen;
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowSecretKey;
         private System.Windows.Forms.ToolStripMenuItem btnIsGetPasswordForShowDynamicPasswordKey;
         private System.Windows.Forms.Timer timerCounter;
@@ -858,5 +872,6 @@
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.Button btnGetOtpFromSnip;
         private System.Windows.Forms.Button btnGetOtpFromCamera;
+        private System.Windows.Forms.ToolStripMenuItem toolStripChangeLanguage;
     }
 }

@@ -12,6 +12,7 @@ using Emgu.CV;
 using MyAuthenticator.FramworkLibrary;
 using DirectShowLib;
 using MyAuthenticator.FramworkApp.Properties;
+using MyAuthenticator.FramworkData.Context;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -42,7 +43,8 @@ namespace MyAuthenticator.FramworkApp
         private void SetToolTip()
         {
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(btnChangeCamera, btnChangeCamera.Tag.ToString());
+            var isEnglish = Functions.IsEnglish();
+            toolTip.SetToolTip(btnChangeCamera, isEnglish ? ResourcesEn.Change_camera : ResourcesFa.Change_camera);
         }
 
         public int CountConnectedCameras()
@@ -108,7 +110,7 @@ namespace MyAuthenticator.FramworkApp
         {
             try
             {
-                var bitmap = Resources.CameraNotConnect;
+                var bitmap = Resources.CameraNotConnect1;
                 try
                 {
                     bitmap = (_capture.QueryFrame().ToImage<Bgr, byte>()).Bitmap;
@@ -135,6 +137,12 @@ namespace MyAuthenticator.FramworkApp
             CameraCount = 0;
             CameraIndex = 0;
             DialogResult = DialogResult = DialogResult.Cancel;
+        }
+
+        internal void CloseCamera()
+        {
+            Application.Idle -= ProcessFrame;
+            _capture.Dispose();
         }
     }
 }

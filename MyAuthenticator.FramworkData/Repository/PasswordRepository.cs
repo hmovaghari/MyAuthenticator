@@ -68,7 +68,7 @@ namespace MyAuthenticator.FramworkData.Repository
         public static List<decimal> GetAnotherRowNumbers(Password password)
         {
             return StaticClass.Model.Passwords.Where(p => p.RowNumber != password.RowNumber)
-                .Select(p => p.RowNumber).ToList();
+                .Select(p => p.RowNumber).OrderBy(p => p).ToList();
         }
 
         public static void AddOrEdit(Password password)

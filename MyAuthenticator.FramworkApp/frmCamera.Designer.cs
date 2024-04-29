@@ -38,7 +38,7 @@
             this.picCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCamera.Location = new System.Drawing.Point(0, 0);
             this.picCamera.Name = "picCamera";
-            this.picCamera.Size = new System.Drawing.Size(284, 261);
+            this.picCamera.Size = new System.Drawing.Size(334, 311);
             this.picCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCamera.TabIndex = 4;
             this.picCamera.TabStop = false;
@@ -46,8 +46,8 @@
             // btnChangeCamera
             // 
             this.btnChangeCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangeCamera.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Switch;
-            this.btnChangeCamera.Location = new System.Drawing.Point(244, 12);
+            this.btnChangeCamera.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Switch1;
+            this.btnChangeCamera.Location = new System.Drawing.Point(294, 12);
             this.btnChangeCamera.Name = "btnChangeCamera";
             this.btnChangeCamera.Size = new System.Drawing.Size(24, 24);
             this.btnChangeCamera.TabIndex = 5;
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(334, 311);
             this.Controls.Add(this.btnChangeCamera);
             this.Controls.Add(this.picCamera);
             this.Name = "frmCamera";

@@ -117,73 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="RowNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PasswordString.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Counter.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Up.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Down.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Between.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bsPassword.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
-  </metadata>
-  <metadata name="RowNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PasswordString.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mnuPassword.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>238, 17</value>
-  </metadata>
-  <metadata name="Counter.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Up.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Down.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Between.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="timerClearPassword.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>367, 17</value>
-  </metadata>
-  <metadata name="saveBackupDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>633, 23</value>
-  </metadata>
-  <metadata name="openBackupDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>774, 23</value>
-  </metadata>
-  <metadata name="timerCounter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>522, 19</value>
-  </metadata>
-  <metadata name="openImageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>920, 23</value>
-  </metadata>
-  <metadata name="bsPassword.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
-  </metadata>
+  <data name="Accept_" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="Are you sure to delete the database? All current information will be deleted!" xml:space="preserve">
+    <value>Are you sure to delete the database? All current information will be deleted!</value>
+  </data>
+  <data name="Are you sure to delete?" xml:space="preserve">
+    <value>Are you sure to delete?</value>
+  </data>
+  <data name="Are you sure to restore? All current information will be deleted!" xml:space="preserve">
+    <value>Are you sure to restore? All current information will be deleted!</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="Backup or restore" xml:space="preserve">
+    <value>Backup or restore</value>
+  </data>
+  <data name="Cancel_" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Change camera" xml:space="preserve">
+    <value>Change camera</value>
+  </data>
+  <data name="Change language" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Check authentication when" xml:space="preserve">
+    <value>Check authentication when</value>
+  </data>
+  <data name="Clear database" xml:space="preserve">
+    <value>Clear database</value>
+  </data>
+  <data name="Copied to the clipboard" xml:space="preserve">
+    <value>Copied to the clipboard</value>
+  </data>
+  <data name="Copy dynamic password" xml:space="preserve">
+    <value>Copy dynamic password</value>
+  </data>
+  <data name="Copy secret key" xml:space="preserve">
+    <value>Copy secret key</value>
+  </data>
+  <data name="Data is saved" xml:space="preserve">
+    <value>Data is saved</value>
+  </data>
+  <data name="Database_" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Dynamic password" xml:space="preserve">
+    <value>Dynamic password</value>
+  </data>
+  <data name="Edit_" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Get backup" xml:space="preserve">
+    <value>Get backup</value>
+  </data>
+  <data name="Input control" xml:space="preserve">
+    <value>Input control</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Move row" xml:space="preserve">
+    <value>Move row</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Name is duplicate" xml:space="preserve">
+    <value>Name is duplicate</value>
+  </data>
+  <data name="Name is empty" xml:space="preserve">
+    <value>Name is empty</value>
+  </data>
+  <data name="Password is wrong" xml:space="preserve">
+    <value>Password is wrong</value>
+  </data>
+  <data name="Password not entered" xml:space="preserve">
+    <value>Password not entered</value>
+  </data>
+  <data name="Passwords are not the same" xml:space="preserve">
+    <value>Passwords are not the same</value>
+  </data>
+  <data name="Password_" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Previous password" xml:space="preserve">
+    <value>Previous password</value>
+  </data>
+  <data name="Previous password is wrong" xml:space="preserve">
+    <value>Previous password is wrong</value>
+  </data>
+  <data name="Qr-Code" xml:space="preserve">
+    <value>Qr-Code</value>
+  </data>
+  <data name="Read QrCode from camera" xml:space="preserve">
+    <value>Read Qr-Code from camera</value>
+  </data>
+  <data name="Read QrCode from file" xml:space="preserve">
+    <value>Read Qr-Code from file</value>
+  </data>
+  <data name="Read QrCode from screen" xml:space="preserve">
+    <value>Read Qr-Code from screen</value>
+  </data>
+  <data name="Repeat password" xml:space="preserve">
+    <value>Repeat password</value>
+  </data>
+  <data name="Restore backup" xml:space="preserve">
+    <value>Restore backup</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Row</value>
+  </data>
+  <data name="Row number" xml:space="preserve">
+    <value>Row number</value>
+  </data>
+  <data name="RowNumber is empty" xml:space="preserve">
+    <value>RowNumber is empty</value>
+  </data>
+  <data name="Save data" xml:space="preserve">
+    <value>Save data</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Secret key" xml:space="preserve">
+    <value>Secret key</value>
+  </data>
+  <data name="Secret key is empty" xml:space="preserve">
+    <value>Secret key is empty</value>
+  </data>
+  <data name="Settings_" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Show dynamic password" xml:space="preserve">
+    <value>Show dynamic password</value>
+  </data>
+  <data name="Show secret key" xml:space="preserve">
+    <value>Show secret key</value>
+  </data>
+  <data name="Show_QrCode_of_secret_key" xml:space="preserve">
+    <value>Show Qr-Code of secret key</value>
+  </data>
+  <data name="There is no row to move" xml:space="preserve">
+    <value>There is no row to change</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Two-factor authentication</value>
+  </data>
 </root>

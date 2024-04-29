@@ -39,6 +39,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = fa-IR
 		SolutionGuid = {66743752-69E1-4F58-9001-1BF6D63CE76F}
 	EndGlobalSection
 EndGlobal

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\Language.cs" />
     <Compile Include="Context\Model.cs" />
     <Compile Include="Context\Password.cs" />
     <Compile Include="Context\PasswordMode.cs" />

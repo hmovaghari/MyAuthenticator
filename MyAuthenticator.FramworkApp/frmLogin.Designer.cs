@@ -36,6 +36,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblOldPassword = new System.Windows.Forms.Label();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -43,8 +45,8 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(41, 107);
+            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel1;
+            this.btnCancel.Location = new System.Drawing.Point(39, 105);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(25, 25);
             this.btnCancel.TabIndex = 15;
@@ -56,8 +58,8 @@
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLogin.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Continuation;
-            this.btnLogin.Location = new System.Drawing.Point(10, 107);
+            this.btnLogin.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Accept1;
+            this.btnLogin.Location = new System.Drawing.Point(8, 105);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(25, 25);
             this.btnLogin.TabIndex = 14;
@@ -69,7 +71,7 @@
             // 
             this.txtRepeatPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRepeatPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtRepeatPassword.Location = new System.Drawing.Point(12, 45);
+            this.txtRepeatPassword.Location = new System.Drawing.Point(10, 43);
             this.txtRepeatPassword.Name = "txtRepeatPassword";
             this.txtRepeatPassword.PasswordChar = '*';
             this.txtRepeatPassword.Size = new System.Drawing.Size(198, 20);
@@ -80,18 +82,18 @@
             this.lblRepeatPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRepeatPassword.AutoSize = true;
             this.lblRepeatPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblRepeatPassword.Location = new System.Drawing.Point(216, 48);
+            this.lblRepeatPassword.Location = new System.Drawing.Point(210, 46);
             this.lblRepeatPassword.Name = "lblRepeatPassword";
             this.lblRepeatPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblRepeatPassword.Size = new System.Drawing.Size(82, 13);
+            this.lblRepeatPassword.Size = new System.Drawing.Size(85, 13);
             this.lblRepeatPassword.TabIndex = 12;
-            this.lblRepeatPassword.Text = "تکرار کلمه عبور:";
+            this.lblRepeatPassword.Text = "تکرار کلمه عبور :";
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtPassword.Location = new System.Drawing.Point(12, 12);
+            this.txtPassword.Location = new System.Drawing.Point(10, 10);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(198, 20);
@@ -102,7 +104,7 @@
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
             this.lblPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblPassword.Location = new System.Drawing.Point(216, 15);
+            this.lblPassword.Location = new System.Drawing.Point(210, 13);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblPassword.Size = new System.Drawing.Size(58, 13);
@@ -113,7 +115,7 @@
             // 
             this.txtOldPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOldPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtOldPassword.Location = new System.Drawing.Point(11, 77);
+            this.txtOldPassword.Location = new System.Drawing.Point(9, 75);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
             this.txtOldPassword.Size = new System.Drawing.Size(198, 20);
@@ -124,12 +126,28 @@
             this.lblOldPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblOldPassword.Location = new System.Drawing.Point(215, 80);
+            this.lblOldPassword.Location = new System.Drawing.Point(209, 78);
             this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblOldPassword.Size = new System.Drawing.Size(81, 13);
+            this.lblOldPassword.Size = new System.Drawing.Size(84, 13);
             this.lblOldPassword.TabIndex = 16;
-            this.lblOldPassword.Text = "کلمه عبور قبلی:";
+            this.lblOldPassword.Text = "کلمه عبور قبلی :";
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Controls.Add(this.lblPassword);
+            this.pnlLogin.Controls.Add(this.txtOldPassword);
+            this.pnlLogin.Controls.Add(this.txtPassword);
+            this.pnlLogin.Controls.Add(this.lblOldPassword);
+            this.pnlLogin.Controls.Add(this.lblRepeatPassword);
+            this.pnlLogin.Controls.Add(this.btnCancel);
+            this.pnlLogin.Controls.Add(this.txtRepeatPassword);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLogin.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(309, 140);
+            this.pnlLogin.TabIndex = 18;
             // 
             // frmLogin
             // 
@@ -138,21 +156,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(309, 140);
-            this.Controls.Add(this.txtOldPassword);
-            this.Controls.Add(this.lblOldPassword);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtRepeatPassword);
-            this.Controls.Add(this.lblRepeatPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ورود";
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -166,5 +178,6 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label lblOldPassword;
+        private System.Windows.Forms.Panel pnlLogin;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MyAuthenticator.FramworkApp.Properties;
+using MyAuthenticator.FramworkData.Context;
 using MyAuthenticator.FramworkData.Repository;
 using System;
 using System.Collections.Generic;
@@ -21,28 +22,65 @@ namespace MyAuthenticator.FramworkApp
             InitializeComponent();
             var items = PasswordRepository.GetAnotherRowNumbers(passwordDTO.PasswordData);
             cmbRowNumber.Items.Clear();
-            items.ForEach(i => cmbRowNumber.Items.Add(cmbRowNumber.Items.Add(i.ToString())));
+            items.ForEach(i => cmbRowNumber.Items.Add(i.ToString()));
+        }
+
+        private void frmChangeRow_Load(object sender, EventArgs e)
+        {
             if (cmbRowNumber.Items.Count == 0)
             {
-                RtlMessageBox.Show(Resources.There_is_no_row_to_change,
-                            Resources.Input_control,
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DialogResult = DialogResult.Cancel;
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.There_is_no_row_to_move : ResourcesFa.There_is_no_row_to_move;
+                var caption = isEnglish ? ResourcesEn.Input_control : ResourcesFa.Input_control;
+                MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnCancel_Click(null, null);
+                return;
             }
+            ChangeLanguageOfForm();
+        }
+
+        private void ChangeLanguageOfForm()
+        {
+            bool isEnglish = Functions.IsEnglish();
+            SetToolTip(isEnglish);
+            SetFormLanguage(isEnglish);
+            ChangeFormDirection(isEnglish);
+        }
+
+        private void ChangeFormDirection(bool isEnglish)
+        {
+            var rightToLeft = isEnglish ? RightToLeft.No : RightToLeft.Yes;
+            lblRowNumber.RightToLeft = rightToLeft;
+            Functions.ChangeDirection(pnlMoveRow, rightToLeft);
+        }
+
+        private void SetFormLanguage(bool isEnglish)
+        {
+            Text = isEnglish ? ResourcesEn.Move_row : ResourcesFa.Move_row;
+            lblRowNumber.Text = (isEnglish ? ResourcesEn.Row_number : ResourcesFa.Row_number) + Functions.Colon;
+        }
+
+        private void SetToolTip(bool isEnglish)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnCancel, isEnglish ? ResourcesEn.Cancel_ : ResourcesFa.Cancel_);
+            toolTip.SetToolTip(btnGetRowNumber, isEnglish ? ResourcesEn.Accept_ : ResourcesFa.Accept_);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void btnGetRowNumber_Click(object sender, EventArgs e)
         {
             if (cmbRowNumber.SelectedIndex == -1 || cmbRowNumber.Text == "0")
             {
-                RtlMessageBox.Show(Resources.RowNumber_is_empty,
-                            Resources.Input_control,
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.RowNumber_is_empty : ResourcesFa.RowNumber_is_empty;
+                var caption = isEnglish ? ResourcesEn.Input_control : ResourcesFa.Input_control;
+                MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             RowNumber = Convert.ToDecimal(cmbRowNumber.Text);

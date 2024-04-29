@@ -7,6 +7,7 @@ using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkData.Context;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
+using MyAuthenticator.FramworkApp.Properties;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -18,6 +19,7 @@ namespace MyAuthenticator.FramworkApp
         [STAThread]
         static void Main()
         {
+            CreateDatabaseFolder();
             Migration();
             InsertDefaultValue();
             Application.EnableVisualStyles();
@@ -25,17 +27,32 @@ namespace MyAuthenticator.FramworkApp
             var isLoging = OpenLoginForm();
             if (isLoging)
             {
-                Application.Run(new frmMain());
+                var dialogResult = DialogResult.None;
+                do
+                {
+                    using (var frm = new frmMain())
+                    {
+                        dialogResult = frm.ShowDialog();
+                    }
+                } while (dialogResult == DialogResult.Retry);
+                //Application.Run(new frmMain());
             }
-            else
-            {
-                Environment.Exit(0);
-            }
+        }
+
+        private static void CreateDatabaseFolder()
+        {
+            AuthenticatorRepository.CreateDatabaseFolder();
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static bool OpenLoginForm()
         {
+            var isLoadFromMainFuntion = new StackFrame(1, true).GetMethod().Name == "Main";
+            if (isLoadFromMainFuntion)
+            {
+                Functions.LoadLanuage();
+            }
+            var isEnglish = Functions.IsEnglish();
             var passwordMode = SettingRepository.GetPasswordMode();
             if (passwordMode == PasswordMode.Empty)
             {
@@ -46,9 +63,9 @@ namespace MyAuthenticator.FramworkApp
                 var changePasswordMode = passwordMode == PasswordMode.Null ? ChangePasswordMode.Create : ChangePasswordMode.Login;
                 using (var frm = new frmLogin(changePasswordMode))
                 {
-                    if (new StackFrame(1, true).GetMethod().Name != "Main")
+                    if (!isLoadFromMainFuntion)
                     {
-                        frm.Text = "احراز هویت";
+                        frm.Text = isEnglish ? ResourcesEn.Authentication : ResourcesFa.Authentication;
                     }
                     if (frm.ShowDialog() == DialogResult.OK)
                     {

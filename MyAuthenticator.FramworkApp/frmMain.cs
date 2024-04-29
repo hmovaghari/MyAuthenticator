@@ -6,12 +6,15 @@ using MyAuthenticator.FramworkData.Context;
 using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkLibrary;
 using System.Drawing;
+using System.Data.Common;
 
 namespace MyAuthenticator.FramworkApp
 {
     public partial class frmMain : Form
     {
         private PasswordDTO CurrentPasswordForShow;
+        private ToolTip toolTip = new ToolTip();
+        //private bool isFirstRun = true;
 
         public frmMain()
         {
@@ -38,9 +41,79 @@ namespace MyAuthenticator.FramworkApp
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            SetToolTip();
             SetSettings();
+            ChangeLanguageOfForm();
             SearchData(null, null);
+            //isFirstRun = false;
+        }
+
+        private void ChangeLanguageOfForm()
+        {
+            bool isEnglish = Functions.IsEnglish();
+            SetToolTip(isEnglish);
+            SetFormLanguage(isEnglish);
+            SetGridLanguage(isEnglish);
+            ChangeFormDirection(isEnglish);
+        }
+
+        private void ChangeFormDirection(bool isEnglish)
+        {
+            var rightToLeft = isEnglish ? RightToLeft.No : RightToLeft.Yes;
+            toolStripMenu.RightToLeft = rightToLeft;
+            SetToolStripMenu(toolStripMenu.Items, rightToLeft);
+            grdPassword.RightToLeft = rightToLeft;
+            Functions.ChangeDirection(pnlData, rightToLeft);
+            Functions.ChangeDirection(pnlSearch, rightToLeft);
+            Functions.ChangeDirection(pnlCrud, rightToLeft);
+        }
+
+        private void SetToolStripMenu(ToolStripItemCollection items, RightToLeft rightToLeft)
+        {
+            foreach (ToolStripItem item in items)
+            {
+                item.RightToLeft = rightToLeft;
+                var toolStripDropDownButton = item as ToolStripDropDownButton;
+                var toolStripMenuItem = item as ToolStripMenuItem;
+                if (toolStripDropDownButton != null || toolStripMenuItem != null)
+                {
+                    if (toolStripDropDownButton != null)
+                    {
+                        SetToolStripMenu(toolStripDropDownButton.DropDownItems, rightToLeft);
+                    }
+                    if (toolStripMenuItem != null)
+                    {
+                        SetToolStripMenu(toolStripMenuItem.DropDownItems, rightToLeft);
+                    }
+                }
+            }
+        }
+
+        private void SetGridLanguage(bool isEnglish)
+        {
+            grdPassword.Columns["RowNumber"].HeaderText = isEnglish ? ResourcesEn.Row : ResourcesFa.Row;
+            grdPassword.Columns["Title"].HeaderText = isEnglish ? ResourcesEn.Name : ResourcesFa.Name;
+            grdPassword.Columns["PasswordString"].HeaderText = isEnglish ? ResourcesEn.Dynamic_password : ResourcesFa.Dynamic_password;
+            btnShowPassword.Text = isEnglish ? ResourcesEn.Show_dynamic_password : ResourcesFa.Show_dynamic_password;
+            btnCopyPassword.Text = isEnglish ? ResourcesEn.Copy_dynamic_password : ResourcesFa.Copy_dynamic_password;
+        }
+
+        private void SetFormLanguage(bool isEnglish)
+        {
+            Text = isEnglish ? ResourcesEn.Two_factor_authentication : ResourcesFa.Two_factor_authentication;
+            toolStripSettings.Text = isEnglish ? ResourcesEn.Settings_ : ResourcesFa.Settings_;
+            btnChangePassword.Text = isEnglish ? ResourcesEn.Change_password : ResourcesFa.Change_password;
+            toolStripCheckAuthenticationWhen.Text = isEnglish ? ResourcesEn.Check_authentication_when : ResourcesFa.Check_authentication_when;
+            btnIsGetPasswordForShowSecretKey.Text = isEnglish ? ResourcesEn.Show_secret_key : ResourcesFa.Show_secret_key;
+            btnIsGetPasswordForShowDynamicPasswordKey.Text = isEnglish ? ResourcesEn.Show_dynamic_password : ResourcesFa.Show_dynamic_password;
+            btnIsGetPasswordForRestoreBackup.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
+            toolStripChangeLanguage.Text = isEnglish ? ResourcesEn.Change_language : ResourcesFa.Change_language;
+            toolStripDatabase.Text = isEnglish ? ResourcesEn.Database_ : ResourcesFa.Database_;
+            btnBackup.Text = isEnglish ? ResourcesEn.Get_backup : ResourcesFa.Get_backup;
+            btnRestore.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
+            btnDeleteDatabase.Text = isEnglish ? ResourcesEn.Clear_database : ResourcesFa.Clear_database;
+            lblName.Text = (isEnglish ? ResourcesEn.Name : ResourcesFa.Name) + Functions.Colon;
+            lblSecretKey.Text = (isEnglish ? ResourcesEn.Secret_key : ResourcesFa.Secret_key) + Functions.Colon;
+            lblSearchName.Text = (isEnglish ? ResourcesEn.Search : ResourcesFa.Search) + Functions.Colon;
         }
 
         private void SetSettings()
@@ -48,37 +121,70 @@ namespace MyAuthenticator.FramworkApp
             ChangeImageBtnIsGetPasswordForShowSecretKey(GetIsGetPasswordForShowSecretKeys());
             ChangeImageBtnIsGetPasswordForShowDynamicPasswordKey(GetIsGetPasswordForShowDynamicPasswords());
             ChangeImageBtnIsGetPasswordForRestoreBackup(GetIsGetPasswordForRestoreBackup());
+            LoadLanguage();
+        }
+
+        private void LoadLanguage()
+        {
+            var languages = SettingRepository.LanguageList;
+            Functions.LoadLanuage();
+            var isEnglish = Functions.IsEnglish();
+            toolStripChangeLanguage.DropDownItems.Clear();
+            languages.ForEach(l =>
+            {
+                var name = isEnglish ? l.Name() : l.Title();
+                toolStripChangeLanguage.DropDownItems.Add(name, image: l.Name() == Functions.Language.Name() ? Resources.Tick1 : null);
+                toolStripChangeLanguage.DropDownItems[toolStripChangeLanguage.DropDownItems.Count - 1].Click += ChangeLanguage;
+            });
+        }
+
+        private void ChangeLanguage(object sender, EventArgs e)
+        {
+            var selectedtoolStrip = sender as ToolStripItem;
+            if (selectedtoolStrip.Image == null)
+            {
+                var selectedText = selectedtoolStrip.Text;
+                var selectedLanguage = (selectedText == Language.English.Name() || selectedText == Language.English.Title()) ?
+                    Language.English : Language.Farsi;
+                SettingRepository.UpdateLanguage(selectedLanguage);
+                RestartForm();
+            }
+        }
+
+        private void RestartForm()
+        {
+            DialogResult = DialogResult.Retry;
         }
 
         private void ChangeImageBtnIsGetPasswordForRestoreBackup(bool isActive)
         {
-            btnIsGetPasswordForRestoreBackup.Image = isActive ? Resources.Tick : null;
+            btnIsGetPasswordForRestoreBackup.Image = isActive ? Resources.Tick1 : null;
         }
 
         private void ChangeImageBtnIsGetPasswordForShowDynamicPasswordKey(bool isActive)
         {
-            btnIsGetPasswordForShowDynamicPasswordKey.Image = isActive ? Resources.Tick : null;
+            btnIsGetPasswordForShowDynamicPasswordKey.Image = isActive ? Resources.Tick1 : null;
         }
 
         private void ChangeImageBtnIsGetPasswordForShowSecretKey(bool isActive)
         {
-            btnIsGetPasswordForShowSecretKey.Image = isActive ? Resources.Tick : null;
+            btnIsGetPasswordForShowSecretKey.Image = isActive ? Resources.Tick1 : null;
         }
 
-        private void SetToolTip()
+        private void SetToolTip(bool isEnglish)
         {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(btnShowSecretKey, btnShowSecretKey.Tag.ToString());
-            toolTip.SetToolTip(btnCopySecretKey, btnCopySecretKey.Tag.ToString());
-            toolTip.SetToolTip(btnQrCodeSecretKey, btnQrCodeSecretKey.Tag.ToString());
-            toolTip.SetToolTip(btnAdd, btnAdd.Tag.ToString());
-            toolTip.SetToolTip(btnEdit, btnEdit.Tag.ToString());
-            toolTip.SetToolTip(btnDelete, btnDelete.Tag.ToString());
-            toolTip.SetToolTip(btnCancel, btnCancel.Tag.ToString());
-            toolTip.SetToolTip(btnAcc, btnAcc.Tag.ToString());
-            toolTip.SetToolTip(btnGetOtpFromFile, btnGetOtpFromFile.Tag.ToString());
-            toolTip.SetToolTip(btnGetOtpFromSnip, btnGetOtpFromSnip.Tag.ToString());
-            toolTip.SetToolTip(btnGetOtpFromCamera, btnGetOtpFromCamera.Tag.ToString());
+            toolTip.RemoveAll();
+            toolTip.SetToolTip(btnShowSecretKey, isEnglish ? ResourcesEn.Show_secret_key : ResourcesFa.Show_secret_key);
+            toolTip.SetToolTip(btnCopySecretKey, isEnglish ? ResourcesEn.Copy_secret_key : ResourcesFa.Copy_secret_key);
+            toolTip.SetToolTip(btnQrCodeSecretKey, isEnglish ? ResourcesEn.Show_QrCode_of_secret_key : ResourcesFa.Show_QrCode_of_secret_key);
+            toolTip.SetToolTip(btnAdd, isEnglish ? ResourcesEn.Insert : ResourcesFa.Insert);
+            toolTip.SetToolTip(btnEdit, isEnglish ? ResourcesEn.Edit_ : ResourcesFa.Edit_);
+            toolTip.SetToolTip(btnDelete, isEnglish ? ResourcesEn.Delete : ResourcesFa.Delete);
+            toolTip.SetToolTip(btnCancel, isEnglish ? ResourcesEn.Cancel_ : ResourcesFa.Cancel_);
+            toolTip.SetToolTip(btnAcc, isEnglish ? ResourcesEn.Accept_ : ResourcesFa.Accept_);
+            toolTip.SetToolTip(btnGetOtpFromFile, isEnglish ? ResourcesEn.Read_QrCode_from_file : ResourcesFa.Read_QrCode_from_file);
+            toolTip.SetToolTip(btnGetOtpFromSnip, isEnglish ? ResourcesEn.Read_QrCode_from_screen : ResourcesFa.Read_QrCode_from_screen);
+            toolTip.SetToolTip(btnGetOtpFromCamera, isEnglish ? ResourcesEn.Read_QrCode_from_camera : ResourcesFa.Read_QrCode_from_camera);
         }
 
         private void AddBinding()
@@ -174,9 +280,10 @@ namespace MyAuthenticator.FramworkApp
             var currentPassword = GetCurrentPassword();
             if (currentPassword != null)
             {
-                var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_delete_,
-                                    $"{Resources.Delete} {currentPassword.Title}",
-                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.Are_you_sure_to_delete_ : ResourcesFa.Are_you_sure_to_delete_;
+                var caption = $"{(isEnglish ? ResourcesEn.Delete : ResourcesFa.Delete)} {currentPassword.Title}";
+                var dialogResult = MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     PasswordRepository.Delete(currentPassword.PasswordData);
@@ -225,8 +332,10 @@ namespace MyAuthenticator.FramworkApp
                 }
                 else
                 {
-                    RtlMessageBox.Show(Resources.Name_is_duplicate, Resources.Input_control,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var isEnglish = Functions.IsEnglish();
+                    var text = isEnglish ? ResourcesEn.Name_is_duplicate : ResourcesFa.Name_is_duplicate;
+                    var caption = isEnglish ? ResourcesEn.Input_control : ResourcesFa.Input_control;
+                    MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -248,16 +357,19 @@ namespace MyAuthenticator.FramworkApp
 
         private bool ControlAddOrEdit()
         {
+            var isEnglish = Functions.IsEnglish();
+            var text = string.Empty;
+            var caption = isEnglish ? ResourcesEn.Input_control : ResourcesFa.Input_control;
             if (string.IsNullOrEmpty(txtName.Text))
             {
-                RtlMessageBox.Show(Resources.Name_is_empty, Resources.Input_control,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = isEnglish ? ResourcesEn.Name_is_empty : ResourcesFa.Name_is_empty;
+                MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (IsAddMode() == true && string.IsNullOrEmpty(txtSecretKey.Text))
             {
-                RtlMessageBox.Show(Resources.Secret_key_is_empty, Resources.Input_control,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = isEnglish ? ResourcesEn.Secret_key_is_empty : ResourcesFa.Secret_key_is_empty;
+                MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -324,7 +436,9 @@ namespace MyAuthenticator.FramworkApp
                 var totp = new TOTP(currentPassword.SecretKey);
                 var passwordString = totp.ComputeTotp();
                 Clipboard.SetText(passwordString);
-                RtlMessageBox.Show(Resources.Copied_to_the_clipboard, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.Copied_to_the_clipboard : ResourcesFa.Copied_to_the_clipboard;
+                MultiLanguageMessageBox.Show(text, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -353,7 +467,9 @@ namespace MyAuthenticator.FramworkApp
             if (secretKey != null)
             {
                 Clipboard.SetText(secretKey);
-                RtlMessageBox.Show(Resources.Copied_to_the_clipboard, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.Copied_to_the_clipboard : ResourcesFa.Copied_to_the_clipboard;
+                MultiLanguageMessageBox.Show(text, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -393,9 +509,10 @@ namespace MyAuthenticator.FramworkApp
                 var result = frm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    RtlMessageBox.Show(Resources.Data_is_saved,
-                                    Resources.Save_data,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var isEnglish = Functions.IsEnglish();
+                    var text = isEnglish ? ResourcesEn.Data_is_saved : ResourcesFa.Data_is_saved;
+                    var caption = isEnglish ? ResourcesEn.Save_data : ResourcesFa.Save_data;
+                    MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -421,7 +538,9 @@ namespace MyAuthenticator.FramworkApp
         {
             if (ColtrolAutentication())
             {
-                var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_restore__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.Are_you_sure_to_restore__All_current_information_will_be_deleted_ : ResourcesFa.Are_you_sure_to_restore__All_current_information_will_be_deleted_;
+                var dialogResult = MultiLanguageMessageBox.Show(text, btnRestore.Text, MessageBoxButtons.YesNo);
                 openBackupDialog.Title = btnRestore.Text;
                 if (dialogResult == DialogResult.Yes && openBackupDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -429,8 +548,7 @@ namespace MyAuthenticator.FramworkApp
                     AuthenticatorRepository.GetNewModel();
                     Program.Migration();
                     Program.InsertDefaultValue();
-                    SetSettings();
-                    SearchData(null, null);
+                    RestartForm();
                 }
             }
         }
@@ -439,13 +557,17 @@ namespace MyAuthenticator.FramworkApp
         {
             if (ColtrolAutentication())
             {
-                var dialogResult = RtlMessageBox.Show(Resources.Are_you_sure_to_delete_the_database__All_current_information_will_be_deleted_, btnRestore.Text, MessageBoxButtons.YesNo);
+                var isEnglish = Functions.IsEnglish();
+                var text = isEnglish ? ResourcesEn.Are_you_sure_to_delete_the_database__All_current_information_will_be_deleted_ : ResourcesFa.Are_you_sure_to_delete_the_database__All_current_information_will_be_deleted_;
+                var dialogResult = MultiLanguageMessageBox.Show(text, btnRestore.Text, MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     AuthenticatorRepository.DeleteDatabase();
                     AuthenticatorRepository.CreateDatabase();
                     AuthenticatorRepository.GetNewModel();
-                    SearchData(null, null);
+                    Program.Migration();
+                    Program.InsertDefaultValue();
+                    RestartForm();
                 }
             }
         }
@@ -457,6 +579,8 @@ namespace MyAuthenticator.FramworkApp
             {
                 using (var frm = new frmQrCode(title, secretKey))
                 {
+                    var isEnlish = Functions.IsEnglish();
+                    frm.Text = isEnlish ? ResourcesEn.Show_QrCode_of_secret_key : ResourcesFa.Show_QrCode_of_secret_key;
                     frm.ShowDialog();
                 }
             }
@@ -577,10 +701,13 @@ namespace MyAuthenticator.FramworkApp
         {
             using (var frm = new frmCamera())
             {
+                var isEnglish = Functions.IsEnglish();
+                frm.Text = isEnglish ? ResourcesEn.Read_QrCode_from_camera : ResourcesFa.Read_QrCode_from_camera;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     var otp = frm.OTP;
                     FillDataFromOpt(otp);
+                    frm.CloseCamera();
                 }
             }
         }

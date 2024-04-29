@@ -17,6 +17,12 @@ namespace MyAuthenticator.FramworkData.Repository
         private static string IsGetPasswordForShowSecretKey => "IsGetPasswordForShowSecretKey";
         private static string IsGetPasswordForShowDynamicPasswordKey => "IsGetPasswordForShowDynamicPassword";
         private static string IsGetPasswordForRestoreBackupKey => "IsGetPasswordForRestoreBackup";
+        private static string LanguageKey => "Language";
+        public static List<Language> LanguageList => new List<Language>
+        {
+            Language.English,
+            Language.Farsi
+        };
 
         public static List<Setting> Get(Setting setting = null)
         {
@@ -61,6 +67,11 @@ namespace MyAuthenticator.FramworkData.Repository
             if (isEmpty || settins.FirstOrDefault(s => s.Name == IsGetPasswordForRestoreBackupKey) == null)
             {
                 insertList.Add(new Setting { Name = IsGetPasswordForRestoreBackupKey, Value = true.ToString() });
+            }
+
+            if (isEmpty || settins.FirstOrDefault(s => s.Name == LanguageKey) == null)
+            {
+                insertList.Add(new Setting { Name = LanguageKey, Value = Language.English.Name() });
             }
 
             if (insertList.Count > 0)
@@ -183,6 +194,19 @@ namespace MyAuthenticator.FramworkData.Repository
         {
             var isGetPasswordForRestoreBackupKey = Get(IsGetPasswordForRestoreBackupKey);
             isGetPasswordForRestoreBackupKey.Value = isGetPassword.ToString();
+            StaticClass.Model.SaveChanges();
+        }
+
+        public static Language GetLanguage()
+        {
+            Enum.TryParse(Get(LanguageKey).Value, out Language language);
+            return language;
+        }
+
+        public static void UpdateLanguage(Language language)
+        {
+            var languageData = Get(LanguageKey);
+            languageData.Value = language.ToString();
             StaticClass.Model.SaveChanges();
         }
     }

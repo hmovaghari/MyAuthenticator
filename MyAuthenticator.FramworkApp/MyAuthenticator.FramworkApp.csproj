@@ -37,7 +37,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Favicon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Publish|AnyCPU'">
+    <OutputPath>bin\Publish\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DirectShowLib-2005">
@@ -138,9 +151,20 @@
       <DependentUpon>frmSnippingTool.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="MultiLanguageMessageBox.cs" />
     <Compile Include="PasswordDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\ResourcesEn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesEn.resx</DependentUpon>
+    </Compile>
     <Compile Include="RtlMessageBox.cs" />
     <EmbeddedResource Include="frmCamera.resx">
       <DependentUpon>frmCamera.cs</DependentUpon>
@@ -164,13 +188,22 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ResourcesFa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesFa.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\ResourcesFa.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>ResourcesFa.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Properties\ResourcesEn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesEn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PasswordDTO.datasource" />
@@ -198,49 +231,82 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Accept.png" />
+    <None Include="Resources\Accept1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add.png" />
+    <None Include="Resources\Add1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Backup1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Between1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Edit.png" />
+    <None Include="Resources\CameraCapture1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Password.png" />
+    <None Include="Resources\CameraNotConnect1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Favicon.ico" />
-    <None Include="Resources\Settings.png" />
-    <None Include="Resources\DeleteDatabase.png" />
-    <None Include="Resources\Database.png" />
-    <None Include="Resources\Backup.png" />
-    <None Include="Resources\Restore.png" />
-    <None Include="Resources\Down.png" />
-    <None Include="Resources\Up.png" />
-    <None Include="Resources\Between.png" />
-    <None Include="Resources\Tick.png" />
+    <None Include="Resources\Cancel1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ScreenCapture.png" />
+    <None Include="Resources\Continuation1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FileReader.png" />
+    <None Include="Resources\Copy1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CameraCapture.png" />
+    <None Include="Resources\Database1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Switch.png" />
+    <None Include="Resources\Delete1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CameraNotConnect.jpg" />
+    <None Include="Resources\DeleteDatabase1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileReader1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QrCode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenCapture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Switch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favicon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Language1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeRow));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnGetRowNumber = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRowNumber = new System.Windows.Forms.Label();
             this.cmbRowNumber = new System.Windows.Forms.ComboBox();
+            this.pnlMoveRow = new System.Windows.Forms.Panel();
+            this.pnlMoveRow.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -40,8 +42,8 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(38, 10);
+            this.btnCancel.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Cancel1;
+            this.btnCancel.Location = new System.Drawing.Point(40, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(25, 25);
             this.btnCancel.TabIndex = 17;
@@ -53,52 +55,63 @@
             // 
             this.btnGetRowNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGetRowNumber.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGetRowNumber.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Continuation;
-            this.btnGetRowNumber.Location = new System.Drawing.Point(7, 10);
+            this.btnGetRowNumber.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Accept1;
+            this.btnGetRowNumber.Location = new System.Drawing.Point(9, 12);
             this.btnGetRowNumber.Name = "btnGetRowNumber";
             this.btnGetRowNumber.Size = new System.Drawing.Size(25, 25);
             this.btnGetRowNumber.TabIndex = 16;
-            this.btnGetRowNumber.Tag = "ورود";
+            this.btnGetRowNumber.Tag = "تائید";
             this.btnGetRowNumber.UseVisualStyleBackColor = true;
             this.btnGetRowNumber.Click += new System.EventHandler(this.btnGetRowNumber_Click);
             // 
-            // label1
+            // lblRowNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(204, 16);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "شماره ردیف :";
+            this.lblRowNumber.AutoSize = true;
+            this.lblRowNumber.Location = new System.Drawing.Point(201, 18);
+            this.lblRowNumber.Name = "lblRowNumber";
+            this.lblRowNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblRowNumber.Size = new System.Drawing.Size(68, 13);
+            this.lblRowNumber.TabIndex = 18;
+            this.lblRowNumber.Text = "شماره ردیف :";
             // 
             // cmbRowNumber
             // 
             this.cmbRowNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRowNumber.FormattingEnabled = true;
-            this.cmbRowNumber.Location = new System.Drawing.Point(77, 12);
+            this.cmbRowNumber.Location = new System.Drawing.Point(74, 14);
             this.cmbRowNumber.Name = "cmbRowNumber";
             this.cmbRowNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbRowNumber.Size = new System.Drawing.Size(121, 21);
             this.cmbRowNumber.TabIndex = 19;
             // 
+            // pnlMoveRow
+            // 
+            this.pnlMoveRow.Controls.Add(this.lblRowNumber);
+            this.pnlMoveRow.Controls.Add(this.btnCancel);
+            this.pnlMoveRow.Controls.Add(this.btnGetRowNumber);
+            this.pnlMoveRow.Controls.Add(this.cmbRowNumber);
+            this.pnlMoveRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMoveRow.Location = new System.Drawing.Point(0, 0);
+            this.pnlMoveRow.Name = "pnlMoveRow";
+            this.pnlMoveRow.Size = new System.Drawing.Size(284, 51);
+            this.pnlMoveRow.TabIndex = 20;
+            // 
             // frmChangeRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 47);
-            this.Controls.Add(this.cmbRowNumber);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnGetRowNumber);
+            this.ClientSize = new System.Drawing.Size(284, 51);
+            this.Controls.Add(this.pnlMoveRow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmChangeRow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "جابجایی ردیف";
+            this.Load += new System.EventHandler(this.frmChangeRow_Load);
+            this.pnlMoveRow.ResumeLayout(false);
+            this.pnlMoveRow.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -106,7 +119,8 @@
 
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnGetRowNumber;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRowNumber;
         private System.Windows.Forms.ComboBox cmbRowNumber;
+        private System.Windows.Forms.Panel pnlMoveRow;
     }
 }
