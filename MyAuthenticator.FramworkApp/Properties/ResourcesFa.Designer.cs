@@ -313,6 +313,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to دوربینی پیدا نشد!.
+        /// </summary>
+        internal static string No_camera_found {
+            get {
+                return ResourceManager.GetString("No camera found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کلمه عبور.
         /// </summary>
         internal static string Password_ {

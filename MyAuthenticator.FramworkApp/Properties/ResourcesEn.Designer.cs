@@ -313,6 +313,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No camera found!.
+        /// </summary>
+        internal static string No_camera_found {
+            get {
+                return ResourceManager.GetString("No camera found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string Password_ {

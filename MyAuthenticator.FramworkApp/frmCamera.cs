@@ -20,7 +20,7 @@ namespace MyAuthenticator.FramworkApp
     {
         private Capture _capture;
         public Dictionary<string, string> OTP = null;
-        private int CameraCount = 0;
+        internal int CameraCount = 0;
         private int CameraIndex = 0;
 
         public frmCamera()
@@ -33,10 +33,6 @@ namespace MyAuthenticator.FramworkApp
             {
                 btnChangeCamera.Enabled = CameraCount > 1;
                 InitCapture(CameraIndex);
-            }
-            else
-            {
-                CloseForm();
             }
         }
 

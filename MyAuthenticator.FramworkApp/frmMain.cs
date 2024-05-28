@@ -702,13 +702,22 @@ namespace MyAuthenticator.FramworkApp
         {
             using (var frm = new frmCamera())
             {
-                var isEnglish = Functions.IsEnglish();
-                frm.Text = isEnglish ? ResourcesEn.Read_QrCode_from_camera : ResourcesFa.Read_QrCode_from_camera;
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (frm.CameraCount > 0)
                 {
-                    var otp = frm.OTP;
-                    FillDataFromOpt(otp);
-                    frm.CloseCamera();
+                    var isEnglish = Functions.IsEnglish();
+                    frm.Text = isEnglish ? ResourcesEn.Read_QrCode_from_camera : ResourcesFa.Read_QrCode_from_camera;
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        var otp = frm.OTP;
+                        FillDataFromOpt(otp);
+                        frm.CloseCamera();
+                    }
+                }
+                else
+                {
+                    var isEnglish = Functions.IsEnglish();
+                    var text = isEnglish ? ResourcesEn.No_camera_found : ResourcesFa.No_camera_found;
+                    var dialogResult = MultiLanguageMessageBox.Show(text, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

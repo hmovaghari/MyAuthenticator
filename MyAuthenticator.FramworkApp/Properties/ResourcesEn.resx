@@ -201,6 +201,9 @@
   <data name="Name is empty" xml:space="preserve">
     <value>Name is empty</value>
   </data>
+  <data name="No camera found" xml:space="preserve">
+    <value>No camera found!</value>
+  </data>
   <data name="Password is wrong" xml:space="preserve">
     <value>Password is wrong</value>
   </data>

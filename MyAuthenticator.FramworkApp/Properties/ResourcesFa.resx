@@ -279,4 +279,7 @@
   <data name="Support" xml:space="preserve">
     <value>پشتیبانی</value>
   </data>
+  <data name="No camera found" xml:space="preserve">
+    <value>دوربینی پیدا نشد!</value>
+  </data>
 </root>
