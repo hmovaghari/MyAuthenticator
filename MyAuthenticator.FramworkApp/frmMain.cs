@@ -114,6 +114,7 @@ namespace MyAuthenticator.FramworkApp
             lblName.Text = (isEnglish ? ResourcesEn.Name : ResourcesFa.Name) + Functions.Colon;
             lblSecretKey.Text = (isEnglish ? ResourcesEn.Secret_key : ResourcesFa.Secret_key) + Functions.Colon;
             lblSearchName.Text = (isEnglish ? ResourcesEn.Search : ResourcesFa.Search) + Functions.Colon;
+            btnSupport.Text = isEnglish ? ResourcesEn.Support : ResourcesFa.Support;
         }
 
         private void SetSettings()
@@ -710,6 +711,18 @@ namespace MyAuthenticator.FramworkApp
                     frm.CloseCamera();
                 }
             }
+        }
+
+        private void btnSupport_Click(object sender, EventArgs e)
+        {
+            OpenSupport();
+        }
+
+        internal static void OpenSupport()
+        {
+            var isEnglish = Functions.IsEnglish();
+            var url = @"http://hmovaghari.github.io/#contact:" + (isEnglish ? "en" : "fa");
+            System.Diagnostics.Process.Start(url);
         }
     }
 }

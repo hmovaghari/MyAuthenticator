@@ -520,6 +520,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to پشتیبانی.
+        /// </summary>
+        internal static string Support {
+            get {
+                return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ردیفی برای جابجایی وجود ندارد.
         /// </summary>
         internal static string There_is_no_row_to_move {

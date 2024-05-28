@@ -81,6 +81,7 @@ namespace MyAuthenticator.FramworkApp
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btnCancel, isEnglish ? ResourcesEn.Cancel_ : ResourcesFa.Cancel_);
             toolTip.SetToolTip(btnLogin, isEnglish ? ResourcesEn.Login : ResourcesFa.Login);
+            toolTip.SetToolTip(btnSupport, isEnglish ? ResourcesEn.Support : ResourcesFa.Support);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -140,6 +141,11 @@ namespace MyAuthenticator.FramworkApp
                 return false;
             }
             return true;
+        }
+
+        private void btnSupport_Click(object sender, EventArgs e)
+        {
+            frmMain.OpenSupport();
         }
     }
 }

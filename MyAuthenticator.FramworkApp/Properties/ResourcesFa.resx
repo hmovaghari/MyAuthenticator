@@ -276,4 +276,7 @@
   <data name="Search" xml:space="preserve">
     <value>جستجو</value>
   </data>
+  <data name="Support" xml:space="preserve">
+    <value>پشتیبانی</value>
+  </data>
 </root>

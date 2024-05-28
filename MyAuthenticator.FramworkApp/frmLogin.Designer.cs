@@ -37,6 +37,7 @@
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblOldPassword = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnSupport = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,6 +136,7 @@
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.btnSupport);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtOldPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
@@ -148,6 +150,20 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(309, 140);
             this.pnlLogin.TabIndex = 18;
+            // 
+            // btnSupport
+            // 
+            this.btnSupport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSupport.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSupport.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Question;
+            this.btnSupport.Location = new System.Drawing.Point(70, 105);
+            this.btnSupport.Name = "btnSupport";
+            this.btnSupport.Size = new System.Drawing.Size(25, 25);
+            this.btnSupport.TabIndex = 18;
+            this.btnSupport.Tag = "پشتیبانی";
+            this.btnSupport.UseVisualStyleBackColor = true;
+            this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
             // 
             // frmLogin
             // 
@@ -179,5 +195,6 @@
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label lblOldPassword;
         private System.Windows.Forms.Panel pnlLogin;
+        private System.Windows.Forms.Button btnSupport;
     }
 }
