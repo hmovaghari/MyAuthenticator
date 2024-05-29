@@ -311,6 +311,12 @@
   <ItemGroup>
     <None Include="Resources\Question.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

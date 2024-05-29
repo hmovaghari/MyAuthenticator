@@ -6,7 +6,8 @@ using MyAuthenticator.FramworkData.Context;
 using MyAuthenticator.FramworkData.Repository;
 using MyAuthenticator.FramworkLibrary;
 using System.Drawing;
-using System.Data.Common;
+using System.Diagnostics;
+using System.Security.Policy;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -43,8 +44,31 @@ namespace MyAuthenticator.FramworkApp
         {
             SetSettings();
             ChangeLanguageOfForm();
+            CheckUpdate();
             SearchData(null, null);
             //isFirstRun = false;
+        }
+
+        private void CheckUpdate()
+        {
+            var isCheckUpdateYes = GetIsCheckUpdateYes();
+            if (isCheckUpdateYes)
+            {
+                var updateContents = FramworkLibrary.Update.IsNeedUpdate(Resources.Version);
+                if (updateContents != null)
+                {
+                    var isEnglish = Functions.IsEnglish();
+                    var caption = isEnglish ? ResourcesEn.Get_the_new_update : ResourcesFa.Get_the_new_update;
+                    var text = (isEnglish ? ResourcesEn.IsGetUpdate : ResourcesFa.IsGetUpdate)
+                        .Replace("{Resources.Version}", Resources.Version)
+                        .Replace("{UpdateVersion}", updateContents[0]);
+                    var isGetUpdate = MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+                    if (isGetUpdate)
+                    {
+                        Process.Start(updateContents[1]);
+                    }
+                }
+            }
         }
 
         private void ChangeLanguageOfForm()
@@ -115,6 +139,9 @@ namespace MyAuthenticator.FramworkApp
             lblSecretKey.Text = (isEnglish ? ResourcesEn.Secret_key : ResourcesFa.Secret_key) + Functions.Colon;
             lblSearchName.Text = (isEnglish ? ResourcesEn.Search : ResourcesFa.Search) + Functions.Colon;
             btnSupport.Text = isEnglish ? ResourcesEn.Support : ResourcesFa.Support;
+            toolStripCheckUpdate.Text = isEnglish ? ResourcesEn.Check_updates_when_start : ResourcesFa.Check_updates_when_start;
+            btntoolStripCheckUpdateTrue.Text = isEnglish ? ResourcesEn.Yes : ResourcesFa.Yes;
+            btntoolStripCheckUpdateFalse.Text = isEnglish ? ResourcesEn.No : ResourcesFa.No;
         }
 
         private void SetSettings()
@@ -123,6 +150,18 @@ namespace MyAuthenticator.FramworkApp
             ChangeImageBtnIsGetPasswordForShowDynamicPasswordKey(GetIsGetPasswordForShowDynamicPasswords());
             ChangeImageBtnIsGetPasswordForRestoreBackup(GetIsGetPasswordForRestoreBackup());
             LoadLanguage();
+            ChangeImageBtnbtntoolStripCheckUpdate(GetIsCheckUpdateYes());
+        }
+
+        private void ChangeImageBtnbtntoolStripCheckUpdate(bool isCheckUpdateYes)
+        {
+            btntoolStripCheckUpdateTrue.Image = isCheckUpdateYes ? Resources.Tick1 : null;
+            btntoolStripCheckUpdateFalse.Image = isCheckUpdateYes ? null : Resources.Tick1;
+        }
+
+        private bool GetIsCheckUpdateYes()
+        {
+            return SettingRepository.IsCheckUpdateYes();
         }
 
         private void LoadLanguage()
@@ -731,7 +770,18 @@ namespace MyAuthenticator.FramworkApp
         {
             var isEnglish = Functions.IsEnglish();
             var url = @"http://hmovaghari.github.io/#contact:" + (isEnglish ? "en" : "fa");
-            System.Diagnostics.Process.Start(url);
+            Process.Start(url);
+        }
+
+        private void ChangeIsCheckUpdate(object sender, EventArgs e)
+        {
+            var currentItem = sender as ToolStripMenuItem;
+            var isActiveOld = GetIsCheckUpdateYes();
+            if (currentItem.Name.Replace("btntoolStripCheckUpdate", string.Empty) == (!isActiveOld).ToString())
+            {
+                SettingRepository.UpdateIsCheckUpdate(!isActiveOld);
+                ChangeImageBtnbtntoolStripCheckUpdate(!isActiveOld);
+            }
         }
     }
 }

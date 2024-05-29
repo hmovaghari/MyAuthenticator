@@ -282,4 +282,19 @@
   <data name="No camera found" xml:space="preserve">
     <value>دوربینی پیدا نشد!</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="Check updates when start" xml:space="preserve">
+    <value>بررسی آپدیت هنگام شروع</value>
+  </data>
+  <data name="Get the new update" xml:space="preserve">
+    <value>دریافت آپدیت جدید</value>
+  </data>
+  <data name="IsGetUpdate" xml:space="preserve">
+    <value>نسخه فعلی\t{Resources.Version}\nنسخه آپدیت\t{UpdateVersion}\nآیا آپدیت انجام شود؟</value>
+  </data>
 </root>

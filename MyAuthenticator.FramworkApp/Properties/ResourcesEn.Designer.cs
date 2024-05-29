@@ -160,6 +160,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check updates when start.
+        /// </summary>
+        internal static string Check_updates_when_start {
+            get {
+                return ResourceManager.GetString("Check updates when start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear database.
         /// </summary>
         internal static string Clear_database {
@@ -250,6 +259,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get the new update.
+        /// </summary>
+        internal static string Get_the_new_update {
+            get {
+                return ResourceManager.GetString("Get the new update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input control.
         /// </summary>
         internal static string Input_control {
@@ -264,6 +282,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Insert {
             get {
                 return ResourceManager.GetString("Insert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current version\t{Resources.Version}\nUpdate version\t{UpdateVersion}\nShould the update be performed?.
+        /// </summary>
+        internal static string IsGetUpdate {
+            get {
+                return ResourceManager.GetString("IsGetUpdate", resourceCulture);
             }
         }
         
@@ -309,6 +336,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Name_is_empty {
             get {
                 return ResourceManager.GetString("Name is empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -552,6 +588,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Two_factor_authentication {
             get {
                 return ResourceManager.GetString("Two-factor authentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

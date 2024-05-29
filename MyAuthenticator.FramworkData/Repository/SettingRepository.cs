@@ -18,6 +18,7 @@ namespace MyAuthenticator.FramworkData.Repository
         private static string IsGetPasswordForShowDynamicPasswordKey => "IsGetPasswordForShowDynamicPassword";
         private static string IsGetPasswordForRestoreBackupKey => "IsGetPasswordForRestoreBackup";
         private static string LanguageKey => "Language";
+        private static string IsCheckUpdateKey => "IsCheckUpdate";
         public static List<Language> LanguageList => new List<Language>
         {
             Language.English,
@@ -72,6 +73,11 @@ namespace MyAuthenticator.FramworkData.Repository
             if (isEmpty || settins.FirstOrDefault(s => s.Name == LanguageKey) == null)
             {
                 insertList.Add(new Setting { Name = LanguageKey, Value = Language.English.Name() });
+            }
+
+            if (isEmpty || settins.FirstOrDefault(s => s.Name == IsCheckUpdateKey) == null)
+            {
+                insertList.Add(new Setting { Name = IsCheckUpdateKey, Value = true.ToString() });
             }
 
             if (insertList.Count > 0)
@@ -207,6 +213,19 @@ namespace MyAuthenticator.FramworkData.Repository
         {
             var languageData = Get(LanguageKey);
             languageData.Value = language.ToString();
+            StaticClass.Model.SaveChanges();
+        }
+
+        public static bool IsCheckUpdateYes()
+        {
+            var isCheckUpdateYes = Get(IsCheckUpdateKey);
+            return isCheckUpdateYes?.Value == true.ToString();
+        }
+
+        public static void UpdateIsCheckUpdate(bool isCheck)
+        {
+            var isCheckUpdate = Get(IsCheckUpdateKey);
+            isCheckUpdate.Value = isCheck.ToString();
             StaticClass.Model.SaveChanges();
         }
     }

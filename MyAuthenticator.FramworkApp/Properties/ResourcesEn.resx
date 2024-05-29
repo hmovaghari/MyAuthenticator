@@ -150,6 +150,9 @@
   <data name="Check authentication when" xml:space="preserve">
     <value>Check authentication when</value>
   </data>
+  <data name="Check updates when start" xml:space="preserve">
+    <value>Check updates when start</value>
+  </data>
   <data name="Clear database" xml:space="preserve">
     <value>Clear database</value>
   </data>
@@ -180,11 +183,17 @@
   <data name="Get backup" xml:space="preserve">
     <value>Get backup</value>
   </data>
+  <data name="Get the new update" xml:space="preserve">
+    <value>Get the new update</value>
+  </data>
   <data name="Input control" xml:space="preserve">
     <value>Input control</value>
   </data>
   <data name="Insert" xml:space="preserve">
     <value>Insert</value>
+  </data>
+  <data name="IsGetUpdate" xml:space="preserve">
+    <value>Current version\t{Resources.Version}\nUpdate version\t{UpdateVersion}\nShould the update be performed?</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
@@ -200,6 +209,9 @@
   </data>
   <data name="Name is empty" xml:space="preserve">
     <value>Name is empty</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="No camera found" xml:space="preserve">
     <value>No camera found!</value>
@@ -281,5 +293,8 @@
   </data>
   <data name="Two-factor authentication" xml:space="preserve">
     <value>Two-factor authentication</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>
