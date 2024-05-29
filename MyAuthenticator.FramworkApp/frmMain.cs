@@ -61,7 +61,9 @@ namespace MyAuthenticator.FramworkApp
                     var caption = isEnglish ? ResourcesEn.Get_the_new_update : ResourcesFa.Get_the_new_update;
                     var text = (isEnglish ? ResourcesEn.IsGetUpdate : ResourcesFa.IsGetUpdate)
                         .Replace("{Resources.Version}", Resources.Version)
-                        .Replace("{UpdateVersion}", updateContents[0]);
+                        .Replace("{UpdateVersion}", updateContents[0])
+                        .Replace(@"\n", "\n")
+                        .Replace(@"\t", "\t");
                     var isGetUpdate = MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
                     if (isGetUpdate)
                     {
