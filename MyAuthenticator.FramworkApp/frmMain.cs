@@ -80,6 +80,7 @@ namespace MyAuthenticator.FramworkApp
             SetFormLanguage(isEnglish);
             SetGridLanguage(isEnglish);
             ChangeFormDirection(isEnglish);
+            Text += $" {Resources.Version}";
         }
 
         private void ChangeFormDirection(bool isEnglish)
