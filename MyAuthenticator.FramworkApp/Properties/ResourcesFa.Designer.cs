@@ -574,6 +574,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نرم افزار آپدیت است.
+        /// </summary>
+        internal static string The_software_is_updated {
+            get {
+                return ResourceManager.GetString("The software is updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ردیفی برای جابجایی وجود ندارد.
         /// </summary>
         internal static string There_is_no_row_to_move {

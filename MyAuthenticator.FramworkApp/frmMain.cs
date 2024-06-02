@@ -8,6 +8,7 @@ using MyAuthenticator.FramworkLibrary;
 using System.Drawing;
 using System.Diagnostics;
 using System.Security.Policy;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -15,7 +16,7 @@ namespace MyAuthenticator.FramworkApp
     {
         private PasswordDTO CurrentPasswordForShow;
         private ToolTip toolTip = new ToolTip();
-        //private bool isFirstRun = true;
+        private bool isFirstRun = true;
 
         public frmMain()
         {
@@ -44,21 +45,21 @@ namespace MyAuthenticator.FramworkApp
         {
             SetSettings();
             ChangeLanguageOfForm();
-            CheckUpdate();
+            CheckUpdate(null, null);
             SearchData(null, null);
-            //isFirstRun = false;
+            isFirstRun = false;
         }
 
-        private void CheckUpdate()
+        private void CheckUpdate(object sender, EventArgs e)
         {
             var isCheckUpdateYes = GetIsCheckUpdateYes();
+            var isEnglish = Functions.IsEnglish();
+            var caption = isEnglish ? ResourcesEn.Get_the_new_update : ResourcesFa.Get_the_new_update;
             if (isCheckUpdateYes)
             {
                 var updateContents = FramworkLibrary.Update.IsNeedUpdate(Resources.Version);
                 if (updateContents != null)
                 {
-                    var isEnglish = Functions.IsEnglish();
-                    var caption = isEnglish ? ResourcesEn.Get_the_new_update : ResourcesFa.Get_the_new_update;
                     var text = (isEnglish ? ResourcesEn.IsGetUpdate : ResourcesFa.IsGetUpdate)
                         .Replace("{Resources.Version}", Resources.Version)
                         .Replace("{UpdateVersion}", updateContents[0])
@@ -69,6 +70,11 @@ namespace MyAuthenticator.FramworkApp
                     {
                         Process.Start(updateContents[1]);
                     }
+                }
+                else if (!isFirstRun)
+                {
+                    var text = isEnglish ? ResourcesEn.The_software_is_updated : ResourcesFa.The_software_is_updated;
+                    MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -142,9 +148,10 @@ namespace MyAuthenticator.FramworkApp
             lblSecretKey.Text = (isEnglish ? ResourcesEn.Secret_key : ResourcesFa.Secret_key) + Functions.Colon;
             lblSearchName.Text = (isEnglish ? ResourcesEn.Search : ResourcesFa.Search) + Functions.Colon;
             btnSupport.Text = isEnglish ? ResourcesEn.Support : ResourcesFa.Support;
-            toolStripCheckUpdate.Text = isEnglish ? ResourcesEn.Check_updates_when_start : ResourcesFa.Check_updates_when_start;
+            toolStripCheckUpdateSetting.Text = isEnglish ? ResourcesEn.Check_updates_when_start : ResourcesFa.Check_updates_when_start;
             btntoolStripCheckUpdateTrue.Text = isEnglish ? ResourcesEn.Yes : ResourcesFa.Yes;
             btntoolStripCheckUpdateFalse.Text = isEnglish ? ResourcesEn.No : ResourcesFa.No;
+            toolStripCheckUpdate.Text = isEnglish ? ResourcesEn.Get_the_new_update : ResourcesFa.Get_the_new_update;
         }
 
         private void SetSettings()

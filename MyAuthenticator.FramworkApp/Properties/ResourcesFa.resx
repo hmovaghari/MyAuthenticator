@@ -297,4 +297,7 @@
   <data name="IsGetUpdate" xml:space="preserve">
     <value>نسخه فعلی\t{Resources.Version}\nنسخه آپدیت\t{UpdateVersion}\nآیا آپدیت انجام شود؟</value>
   </data>
+  <data name="The software is updated" xml:space="preserve">
+    <value>نرم افزار آپدیت است</value>
+  </data>
 </root>

@@ -38,9 +38,10 @@
             this.btnIsGetPasswordForShowDynamicPasswordKey = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIsGetPasswordForRestoreBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripChangeLanguage = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCheckUpdateSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.btntoolStripCheckUpdateTrue = new System.Windows.Forms.ToolStripMenuItem();
             this.btntoolStripCheckUpdateFalse = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDatabase = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,6 +149,7 @@
             this.btnChangePassword,
             this.toolStripCheckAuthenticationWhen,
             this.toolStripChangeLanguage,
+            this.toolStripCheckUpdateSetting,
             this.toolStripCheckUpdate});
             this.toolStripSettings.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Settings1;
             this.toolStripSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -202,29 +204,37 @@
             this.toolStripChangeLanguage.Size = new System.Drawing.Size(194, 22);
             this.toolStripChangeLanguage.Text = "تغییر زبان";
             // 
-            // toolStripCheckUpdate
+            // toolStripCheckUpdateSetting
             // 
-            this.toolStripCheckUpdate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCheckUpdateSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btntoolStripCheckUpdateTrue,
             this.btntoolStripCheckUpdateFalse});
-            this.toolStripCheckUpdate.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Update;
-            this.toolStripCheckUpdate.Name = "toolStripCheckUpdate";
-            this.toolStripCheckUpdate.Size = new System.Drawing.Size(194, 22);
-            this.toolStripCheckUpdate.Text = "بررسی آپدیت هنگام شروع";
+            this.toolStripCheckUpdateSetting.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Update;
+            this.toolStripCheckUpdateSetting.Name = "toolStripCheckUpdateSetting";
+            this.toolStripCheckUpdateSetting.Size = new System.Drawing.Size(194, 22);
+            this.toolStripCheckUpdateSetting.Text = "بررسی آپدیت هنگام شروع";
             // 
             // btntoolStripCheckUpdateTrue
             // 
             this.btntoolStripCheckUpdateTrue.Name = "btntoolStripCheckUpdateTrue";
-            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(180, 22);
+            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(90, 22);
             this.btntoolStripCheckUpdateTrue.Text = "بله";
             this.btntoolStripCheckUpdateTrue.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
             // 
             // btntoolStripCheckUpdateFalse
             // 
             this.btntoolStripCheckUpdateFalse.Name = "btntoolStripCheckUpdateFalse";
-            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(180, 22);
+            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(90, 22);
             this.btntoolStripCheckUpdateFalse.Text = "خیر";
             this.btntoolStripCheckUpdateFalse.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
+            // 
+            // toolStripCheckUpdate
+            // 
+            this.toolStripCheckUpdate.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Update;
+            this.toolStripCheckUpdate.Name = "toolStripCheckUpdate";
+            this.toolStripCheckUpdate.Size = new System.Drawing.Size(194, 22);
+            this.toolStripCheckUpdate.Text = "بررسی آپدیت";
+            this.toolStripCheckUpdate.Click += new System.EventHandler(this.CheckUpdate);
             // 
             // toolStripDatabase
             // 
@@ -913,8 +923,9 @@
         private System.Windows.Forms.Button btnGetOtpFromCamera;
         private System.Windows.Forms.ToolStripMenuItem toolStripChangeLanguage;
         private System.Windows.Forms.ToolStripButton btnSupport;
-        private System.Windows.Forms.ToolStripMenuItem toolStripCheckUpdate;
+        private System.Windows.Forms.ToolStripMenuItem toolStripCheckUpdateSetting;
         private System.Windows.Forms.ToolStripMenuItem btntoolStripCheckUpdateTrue;
         private System.Windows.Forms.ToolStripMenuItem btntoolStripCheckUpdateFalse;
+        private System.Windows.Forms.ToolStripMenuItem toolStripCheckUpdate;
     }
 }
