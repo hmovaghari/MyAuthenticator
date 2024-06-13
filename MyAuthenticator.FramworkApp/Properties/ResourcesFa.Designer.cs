@@ -151,6 +151,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تغییر مسیر پایگاه داده.
+        /// </summary>
+        internal static string Change_the_database_path {
+            get {
+                return ResourceManager.GetString("Change the database path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بررسی احراز هویت در زمان.
         /// </summary>
         internal static string Check_authentication_when {
@@ -205,6 +214,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کپی یا ایجاد پایگاه داده.
+        /// </summary>
+        internal static string Create_or_copy_database {
+            get {
+                return ResourceManager.GetString("Create or copy database", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات با موفقیت ذخیره شد.
         /// </summary>
         internal static string Data_is_saved {
@@ -219,6 +237,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Database_ {
             get {
                 return ResourceManager.GetString("Database_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مسیر پایگاه داده.
+        /// </summary>
+        internal static string Database_path {
+            get {
+                return ResourceManager.GetString("Database path", resourceCulture);
             }
         }
         
@@ -300,6 +327,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to انتقال پایگاه داده.
+        /// </summary>
+        internal static string Move_database {
+            get {
+                return ResourceManager.GetString("Move database", resourceCulture);
             }
         }
         

@@ -8,6 +8,8 @@ using MyAuthenticator.FramworkData.Context;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using MyAuthenticator.FramworkApp.Properties;
+using System.Data.Entity;
+using System.IO;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -19,11 +21,11 @@ namespace MyAuthenticator.FramworkApp
         [STAThread]
         static void Main()
         {
-            CreateDatabaseFolder();
-            Migration();
-            InsertDefaultValue();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CreateDatabaseIfNotExists();
+            Migration();
+            InsertDefaultValue();
             var isLoging = OpenLoginForm();
             if (isLoging)
             {
@@ -39,9 +41,27 @@ namespace MyAuthenticator.FramworkApp
             }
         }
 
-        private static void CreateDatabaseFolder()
+        private static void CreateDatabaseIfNotExists()
         {
-            AuthenticatorRepository.CreateDatabaseFolder();
+            var dataSource = AuthenticatorRepository.GetUserDataSource();
+            if (string.IsNullOrEmpty(dataSource) || !File.Exists(dataSource))
+            {
+                using (var frm = new frmDataSource())
+                {
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        dataSource = AuthenticatorRepository.GetUserDataSource();
+                    }
+                    else
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+            }
+            if (!string.IsNullOrEmpty(dataSource) && !File.Exists(dataSource))
+            {
+                AuthenticatorRepository.CreateDatabase();
+            }
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]

@@ -595,7 +595,6 @@ namespace MyAuthenticator.FramworkApp
                 if (dialogResult == DialogResult.Yes && openBackupDialog.ShowDialog() == DialogResult.OK)
                 {
                     AuthenticatorRepository.Restore(openBackupDialog.FileName);
-                    AuthenticatorRepository.GetNewModel();
                     Program.Migration();
                     Program.InsertDefaultValue();
                     RestartForm();
@@ -614,7 +613,6 @@ namespace MyAuthenticator.FramworkApp
                 {
                     AuthenticatorRepository.DeleteDatabase();
                     AuthenticatorRepository.CreateDatabase();
-                    AuthenticatorRepository.GetNewModel();
                     Program.Migration();
                     Program.InsertDefaultValue();
                     RestartForm();

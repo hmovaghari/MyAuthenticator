@@ -8,6 +8,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserSettings = MyAuthenticator.FramworkData.Properties.Settings;
 
 namespace MyAuthenticator.FramworkData.Repository
 {
@@ -20,8 +21,12 @@ namespace MyAuthenticator.FramworkData.Repository
 
         public static void Migration()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Model, Configuration>());
-            StaticClass.Model.Database.Initialize(force: true);
+            try
+            {
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<Model, Configuration>());
+                StaticClass.Model.Database.Initialize(force: true);
+            }
+            catch (Exception ex) { }
         }
 
         public static void Backup(string backupPath)
@@ -34,8 +39,6 @@ namespace MyAuthenticator.FramworkData.Repository
         {
             using (ZipArchive zip = ZipFile.Open(backupPath, ZipArchiveMode.Read))
             {
-                //var databasePath = GetDatabasePath();
-                //var dataBaseFileName = Path.GetFileName(DatabaseLocalPath());
                 var databaseDirectory = GetDirectoryName(GetDatabasePath());
                 DeleteDatabase();
                 zip.ExtractToDirectory(databaseDirectory);
@@ -49,17 +52,7 @@ namespace MyAuthenticator.FramworkData.Repository
 
         private static string GetDatabasePath()
         {
-            return Path.Combine(GetCurrentDirectory(), DatabaseLocalPath());
-        }
-
-        private static string DatabaseLocalPath()
-        {
-            return @"Database\Database.sdf";
-        }
-
-        private static string GetCurrentDirectory()
-        {
-            return Environment.CurrentDirectory;
+            return UserSettings.Default.DataSource;
         }
 
         public static void DeleteDatabase()
@@ -73,13 +66,16 @@ namespace MyAuthenticator.FramworkData.Repository
             StaticClass.Model.Database.Create();
         }
 
-        public static void CreateDatabaseFolder()
+        public static string GetUserDataSource()
         {
-            var databaseDirectory = GetDirectoryName(GetDatabasePath());
-            if (!Directory.Exists(databaseDirectory))
-            {
-                Directory.CreateDirectory(databaseDirectory);
-            }
+            var dataSource = UserSettings.Default.DataSource;
+            return string.IsNullOrEmpty(dataSource) ? null : dataSource;
+        }
+
+        public static void ChageUserDataSource(string dataSource)
+        {
+            UserSettings.Default.DataSource = dataSource;
+            UserSettings.Default.Save();
         }
     }
 }
