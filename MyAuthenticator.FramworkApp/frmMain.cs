@@ -59,7 +59,7 @@ namespace MyAuthenticator.FramworkApp
             if (isCheckUpdateYes)
             {
                 var updateContents = FramworkLibrary.Update.IsNeedUpdate(Resources.Version);
-                if (updateContents != null)
+                if (updateContents.Count > 1)
                 {
                     var text = (isEnglish ? ResourcesEn.IsGetUpdate : ResourcesFa.IsGetUpdate)
                         .Replace("{Resources.Version}", Resources.Version)
@@ -71,6 +71,11 @@ namespace MyAuthenticator.FramworkApp
                     {
                         Process.Start(updateContents[1]);
                     }
+                }
+                else if (updateContents[0] == FramworkLibrary.Update.NoConnection)
+                {
+                    var text = isEnglish ? ResourcesEn.NoConnection : ResourcesFa.NoConnection;
+                    MultiLanguageMessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!isFirstRun)
                 {

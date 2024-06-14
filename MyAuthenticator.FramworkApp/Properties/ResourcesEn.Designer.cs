@@ -376,6 +376,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no connection to server.
+        /// </summary>
+        internal static string NoConnection {
+            get {
+                return ResourceManager.GetString("NoConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string Password_ {

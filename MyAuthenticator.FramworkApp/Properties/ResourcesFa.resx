@@ -309,4 +309,7 @@
   <data name="The database is already created" xml:space="preserve">
     <value>پایگاه داده قبلا ایجاد شده است</value>
   </data>
+  <data name="NoConnection" xml:space="preserve">
+    <value>ارتباط با سرور وجود ندارد</value>
+  </data>
 </root>

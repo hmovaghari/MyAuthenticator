@@ -376,6 +376,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارتباط با سرور وجود ندارد.
+        /// </summary>
+        internal static string NoConnection {
+            get {
+                return ResourceManager.GetString("NoConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کلمه عبور.
         /// </summary>
         internal static string Password_ {
