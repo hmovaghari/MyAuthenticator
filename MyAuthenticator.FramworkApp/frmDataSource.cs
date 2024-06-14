@@ -18,15 +18,15 @@ namespace MyAuthenticator.FramworkApp
     public partial class frmDataSource : Form
     {
         private Language? Language;
-        public bool IsCopy { get; private set; }
+        public string OldPath { get; private set; }
 
         public frmDataSource(Language? language = null)
         {
             InitializeComponent();
             Language = language;
+            OldPath = AuthenticatorRepository.GetUserDataSource();
             this.SetIcon();
             ChangeLanguage();
-            rdbMoveDatabase.Enabled = !(language == null);
         }
 
         private void ChangeLanguage()
@@ -35,24 +35,18 @@ namespace MyAuthenticator.FramworkApp
             switch (Language)
             {
                 case FramworkData.Context.Language.English:
-                    Text = ResourcesEn.Change_the_database_path;
-                    txtChangeTheDatabasePath.Text = ResourcesEn.Change_the_database_path;
-                    rdbCreateOrCopyDatabase.Text = ResourcesEn.Create_or_copy_database;
-                    rdbMoveDatabase.Text = ResourcesEn.Move_database;
+                    Text = ResourcesEn.Change_database_path;
                     toolTip.SetToolTip(btnDatabasePath, ResourcesEn.Database_path);
                     btnDatabasePath.Tag = ResourcesEn.Database_path;
-                    toolTip.SetToolTip(btnChangePath, ResourcesEn.Change_the_database_path);
+                    toolTip.SetToolTip(btnChangePath, ResourcesEn.Change_database_path);
                     toolTip.SetToolTip(btnCancel, ResourcesEn.Cancel_);
                     Functions.ChangeDirection(pnlMain, RightToLeft.No);
                     break;
                 case FramworkData.Context.Language.Farsi:
-                    Text = ResourcesFa.Change_the_database_path;
-                    txtChangeTheDatabasePath.Text = ResourcesFa.Change_the_database_path;
-                    rdbCreateOrCopyDatabase.Text = ResourcesFa.Create_or_copy_database;
-                    rdbMoveDatabase.Text = ResourcesFa.Move_database;
+                    Text = ResourcesFa.Change_database_path;
                     toolTip.SetToolTip(btnDatabasePath, ResourcesFa.Database_path);
                     btnDatabasePath.Tag = ResourcesFa.Database_path;
-                    toolTip.SetToolTip(btnChangePath, ResourcesFa.Change_the_database_path);
+                    toolTip.SetToolTip(btnChangePath, ResourcesFa.Change_database_path);
                     toolTip.SetToolTip(btnCancel, ResourcesFa.Cancel_);
                     Functions.ChangeDirection(pnlMain, RightToLeft.Yes);
                     break;
@@ -72,23 +66,23 @@ namespace MyAuthenticator.FramworkApp
         {
             if (ControEditPath())
             {
-                AuthenticatorRepository.ChageUserDataSource(txtPath.Text);
-                IsCopy = rdbCreateOrCopyDatabase.Checked;
+                AuthenticatorRepository.ChageUserDataSource(saveDataSourceDialog.FileName);
                 DialogResult = DialogResult.OK;
             }
         }
 
         private bool ControEditPath()
         {
-            if (string.IsNullOrEmpty(txtPath.Text))
+            if (string.IsNullOrEmpty(saveDataSourceDialog.FileName))
             {
                 btnDatabasePath_Click(null, null);
                 return false;
             }
 
-            if (!rdbCreateOrCopyDatabase.Checked && !rdbMoveDatabase.Checked)
+            if (File.Exists(saveDataSourceDialog.FileName))
             {
-                grpRadioBox.ForeColor = Color.Red;
+                var message = Functions.IsEnglish() ? ResourcesEn.The_database_is_already_created : ResourcesFa.The_database_is_already_created;
+                MultiLanguageMessageBox.Show(message, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

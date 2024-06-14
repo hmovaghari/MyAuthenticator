@@ -43,6 +43,7 @@
             this.btntoolStripCheckUpdateFalse = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDatabase = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnChangeDatabasePath = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteDatabase = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,6 +240,7 @@
             // toolStripDatabase
             // 
             this.toolStripDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnChangeDatabasePath,
             this.btnBackup,
             this.btnRestore,
             this.btnDeleteDatabase});
@@ -247,6 +249,14 @@
             this.toolStripDatabase.Name = "toolStripDatabase";
             this.toolStripDatabase.Size = new System.Drawing.Size(86, 22);
             this.toolStripDatabase.Text = "پایگاه داده";
+            // 
+            // btnChangeDatabasePath
+            // 
+            this.btnChangeDatabasePath.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.DatabasePath;
+            this.btnChangeDatabasePath.Name = "btnChangeDatabasePath";
+            this.btnChangeDatabasePath.Size = new System.Drawing.Size(180, 22);
+            this.btnChangeDatabasePath.Text = "تغییر مسیر پایگاه داده";
+            this.btnChangeDatabasePath.Click += new System.EventHandler(this.btnChangeDatabasePath_Click);
             // 
             // btnBackup
             // 
@@ -927,5 +937,6 @@
         private System.Windows.Forms.ToolStripMenuItem btntoolStripCheckUpdateTrue;
         private System.Windows.Forms.ToolStripMenuItem btntoolStripCheckUpdateFalse;
         private System.Windows.Forms.ToolStripMenuItem toolStripCheckUpdate;
+        private System.Windows.Forms.ToolStripMenuItem btnChangeDatabasePath;
     }
 }

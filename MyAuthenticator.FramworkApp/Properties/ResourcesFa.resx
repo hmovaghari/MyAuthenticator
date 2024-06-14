@@ -300,16 +300,13 @@
   <data name="The software is updated" xml:space="preserve">
     <value>نرم افزار آپدیت است</value>
   </data>
-  <data name="Change the database path" xml:space="preserve">
+  <data name="Change database path" xml:space="preserve">
     <value>تغییر مسیر پایگاه داده</value>
-  </data>
-  <data name="Create or copy database" xml:space="preserve">
-    <value>کپی یا ایجاد پایگاه داده</value>
   </data>
   <data name="Database path" xml:space="preserve">
     <value>مسیر پایگاه داده</value>
   </data>
-  <data name="Move database" xml:space="preserve">
-    <value>انتقال پایگاه داده</value>
+  <data name="The database is already created" xml:space="preserve">
+    <value>پایگاه داده قبلا ایجاد شده است</value>
   </data>
 </root>

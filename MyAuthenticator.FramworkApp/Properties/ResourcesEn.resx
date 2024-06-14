@@ -141,14 +141,14 @@
   <data name="Change camera" xml:space="preserve">
     <value>Change camera</value>
   </data>
+  <data name="Change database path" xml:space="preserve">
+    <value>Change database path</value>
+  </data>
   <data name="Change language" xml:space="preserve">
     <value>Change language</value>
   </data>
   <data name="Change password" xml:space="preserve">
     <value>Change password</value>
-  </data>
-  <data name="Change the database path" xml:space="preserve">
-    <value>Change the database path</value>
   </data>
   <data name="Check authentication when" xml:space="preserve">
     <value>Check authentication when</value>
@@ -167,9 +167,6 @@
   </data>
   <data name="Copy secret key" xml:space="preserve">
     <value>Copy secret key</value>
-  </data>
-  <data name="Create or copy database" xml:space="preserve">
-    <value>Create or copy database</value>
   </data>
   <data name="Data is saved" xml:space="preserve">
     <value>Data is saved</value>
@@ -206,9 +203,6 @@
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
-  </data>
-  <data name="Move database" xml:space="preserve">
-    <value>Move database</value>
   </data>
   <data name="Move row" xml:space="preserve">
     <value>Move row</value>
@@ -299,6 +293,9 @@
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>
+  </data>
+  <data name="The database is already created" xml:space="preserve">
+    <value>The database is already created</value>
   </data>
   <data name="The software is updated" xml:space="preserve">
     <value>The software is updated</value>

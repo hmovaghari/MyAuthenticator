@@ -66,6 +66,12 @@ namespace MyAuthenticator.FramworkData.Repository
             StaticClass.Model.Database.Create();
         }
 
+        public static void MoveDatabase(string source, string destination)
+        {
+            File.Move(source, destination);
+            GetNewModel();
+        }
+
         public static string GetUserDataSource()
         {
             var dataSource = UserSettings.Default.DataSource;

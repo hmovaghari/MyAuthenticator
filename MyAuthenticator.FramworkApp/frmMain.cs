@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Security.Policy;
 using static System.Data.Entity.Infrastructure.Design.Executor;
+using System.IO;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -141,6 +142,7 @@ namespace MyAuthenticator.FramworkApp
             btnIsGetPasswordForRestoreBackup.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
             toolStripChangeLanguage.Text = isEnglish ? ResourcesEn.Change_language : ResourcesFa.Change_language;
             toolStripDatabase.Text = isEnglish ? ResourcesEn.Database_ : ResourcesFa.Database_;
+            btnChangeDatabasePath.Text = isEnglish ? ResourcesEn.Change_database_path : ResourcesFa.Change_database_path;
             btnBackup.Text = isEnglish ? ResourcesEn.Get_backup : ResourcesFa.Get_backup;
             btnRestore.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
             btnDeleteDatabase.Text = isEnglish ? ResourcesEn.Clear_database : ResourcesFa.Clear_database;
@@ -789,6 +791,17 @@ namespace MyAuthenticator.FramworkApp
             {
                 SettingRepository.UpdateIsCheckUpdate(!isActiveOld);
                 ChangeImageBtnbtntoolStripCheckUpdate(!isActiveOld);
+            }
+        }
+
+        private void btnChangeDatabasePath_Click(object sender, EventArgs e)
+        {
+            using (var frm = new frmDataSource(Functions.Language))
+            {
+                if (frm.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(frm.OldPath))
+                {
+                    AuthenticatorRepository.MoveDatabase(frm.OldPath, AuthenticatorRepository.GetUserDataSource());
+                }
             }
         }
     }

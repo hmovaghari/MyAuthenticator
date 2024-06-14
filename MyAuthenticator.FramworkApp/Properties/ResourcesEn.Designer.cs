@@ -133,6 +133,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change database path.
+        /// </summary>
+        internal static string Change_database_path {
+            get {
+                return ResourceManager.GetString("Change database path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change language.
         /// </summary>
         internal static string Change_language {
@@ -147,15 +156,6 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Change_password {
             get {
                 return ResourceManager.GetString("Change password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change the database path.
-        /// </summary>
-        internal static string Change_the_database_path {
-            get {
-                return ResourceManager.GetString("Change the database path", resourceCulture);
             }
         }
         
@@ -210,15 +210,6 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Copy_secret_key {
             get {
                 return ResourceManager.GetString("Copy secret key", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Create or copy database.
-        /// </summary>
-        internal static string Create_or_copy_database {
-            get {
-                return ResourceManager.GetString("Create or copy database", resourceCulture);
             }
         }
         
@@ -327,15 +318,6 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Move database.
-        /// </summary>
-        internal static string Move_database {
-            get {
-                return ResourceManager.GetString("Move database", resourceCulture);
             }
         }
         
@@ -606,6 +588,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The database is already created.
+        /// </summary>
+        internal static string The_database_is_already_created {
+            get {
+                return ResourceManager.GetString("The database is already created", resourceCulture);
             }
         }
         
