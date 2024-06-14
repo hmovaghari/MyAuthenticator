@@ -132,8 +132,8 @@
   <data name="Authentication" xml:space="preserve">
     <value>Authentication</value>
   </data>
-  <data name="Backup or restore" xml:space="preserve">
-    <value>Backup or restore</value>
+  <data name="BackupRestoreChange" xml:space="preserve">
+    <value>Backup/restore or change database</value>
   </data>
   <data name="Cancel_" xml:space="preserve">
     <value>Cancel</value>

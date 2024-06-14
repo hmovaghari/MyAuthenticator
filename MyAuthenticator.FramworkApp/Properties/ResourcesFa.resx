@@ -174,8 +174,8 @@
   <data name="Authentication" xml:space="preserve">
     <value>احراز هویت</value>
   </data>
-  <data name="Backup or restore" xml:space="preserve">
-    <value>دریافت یا بازیابی نسخه پشتیبان</value>
+  <data name="BackupRestoreChange" xml:space="preserve">
+    <value>دریافت/بازیابی یا تغییر مسیر پایگاه داده</value>
   </data>
   <data name="Cancel_" xml:space="preserve">
     <value>انصراف</value>

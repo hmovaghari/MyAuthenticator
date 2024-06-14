@@ -106,11 +106,11 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup or restore.
+        ///   Looks up a localized string similar to Backup/restore or change database.
         /// </summary>
-        internal static string Backup_or_restore {
+        internal static string BackupRestoreChange {
             get {
-                return ResourceManager.GetString("Backup or restore", resourceCulture);
+                return ResourceManager.GetString("BackupRestoreChange", resourceCulture);
             }
         }
         

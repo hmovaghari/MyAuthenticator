@@ -139,7 +139,7 @@ namespace MyAuthenticator.FramworkApp
             toolStripCheckAuthenticationWhen.Text = isEnglish ? ResourcesEn.Check_authentication_when : ResourcesFa.Check_authentication_when;
             btnIsGetPasswordForShowSecretKey.Text = isEnglish ? ResourcesEn.Show_secret_key : ResourcesFa.Show_secret_key;
             btnIsGetPasswordForShowDynamicPasswordKey.Text = isEnglish ? ResourcesEn.Show_dynamic_password : ResourcesFa.Show_dynamic_password;
-            btnIsGetPasswordForRestoreBackup.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
+            btnIsGetPasswordForRestoreBackup.Text = isEnglish ? ResourcesEn.BackupRestoreChange : ResourcesFa.BackupRestoreChange;
             toolStripChangeLanguage.Text = isEnglish ? ResourcesEn.Change_language : ResourcesFa.Change_language;
             toolStripDatabase.Text = isEnglish ? ResourcesEn.Database_ : ResourcesFa.Database_;
             btnChangeDatabasePath.Text = isEnglish ? ResourcesEn.Change_database_path : ResourcesFa.Change_database_path;
@@ -796,11 +796,14 @@ namespace MyAuthenticator.FramworkApp
 
         private void btnChangeDatabasePath_Click(object sender, EventArgs e)
         {
-            using (var frm = new frmDataSource(Functions.Language))
+            if (ColtrolAutentication())
             {
-                if (frm.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(frm.OldPath))
+                using (var frm = new frmDataSource(Functions.Language))
                 {
-                    AuthenticatorRepository.MoveDatabase(frm.OldPath, AuthenticatorRepository.GetUserDataSource());
+                    if (frm.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(frm.OldPath))
+                    {
+                        AuthenticatorRepository.MoveDatabase(frm.OldPath, AuthenticatorRepository.GetUserDataSource());
+                    }
                 }
             }
         }

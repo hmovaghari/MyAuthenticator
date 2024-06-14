@@ -106,11 +106,11 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to دریافت یا بازیابی نسخه پشتیبان.
+        ///   Looks up a localized string similar to دریافت/بازیابی یا تغییر مسیر پایگاه داده.
         /// </summary>
-        internal static string Backup_or_restore {
+        internal static string BackupRestoreChange {
             get {
-                return ResourceManager.GetString("Backup or restore", resourceCulture);
+                return ResourceManager.GetString("BackupRestoreChange", resourceCulture);
             }
         }
         

@@ -180,22 +180,22 @@
             // btnIsGetPasswordForShowSecretKey
             // 
             this.btnIsGetPasswordForShowSecretKey.Name = "btnIsGetPasswordForShowSecretKey";
-            this.btnIsGetPasswordForShowSecretKey.Size = new System.Drawing.Size(227, 22);
+            this.btnIsGetPasswordForShowSecretKey.Size = new System.Drawing.Size(285, 22);
             this.btnIsGetPasswordForShowSecretKey.Text = "نمایش کد امنیتی";
             this.btnIsGetPasswordForShowSecretKey.Click += new System.EventHandler(this.btnIsGetPasswordForShowSecretKey_Click);
             // 
             // btnIsGetPasswordForShowDynamicPasswordKey
             // 
             this.btnIsGetPasswordForShowDynamicPasswordKey.Name = "btnIsGetPasswordForShowDynamicPasswordKey";
-            this.btnIsGetPasswordForShowDynamicPasswordKey.Size = new System.Drawing.Size(227, 22);
+            this.btnIsGetPasswordForShowDynamicPasswordKey.Size = new System.Drawing.Size(285, 22);
             this.btnIsGetPasswordForShowDynamicPasswordKey.Text = "نمایش کلمه عبور پویا";
             this.btnIsGetPasswordForShowDynamicPasswordKey.Click += new System.EventHandler(this.btnIsGetPasswordForShowDynamicPasswordKey_Click);
             // 
             // btnIsGetPasswordForRestoreBackup
             // 
             this.btnIsGetPasswordForRestoreBackup.Name = "btnIsGetPasswordForRestoreBackup";
-            this.btnIsGetPasswordForRestoreBackup.Size = new System.Drawing.Size(227, 22);
-            this.btnIsGetPasswordForRestoreBackup.Text = "دریافت یا بازیابی نسخه پشتیبان";
+            this.btnIsGetPasswordForRestoreBackup.Size = new System.Drawing.Size(285, 22);
+            this.btnIsGetPasswordForRestoreBackup.Text = "دریافت/بازیابی یا تغییر مسیر نسخه پشتیبان";
             this.btnIsGetPasswordForRestoreBackup.Click += new System.EventHandler(this.btnIsGetPasswordForRestoreBackup_Click);
             // 
             // toolStripChangeLanguage
@@ -218,14 +218,14 @@
             // btntoolStripCheckUpdateTrue
             // 
             this.btntoolStripCheckUpdateTrue.Name = "btntoolStripCheckUpdateTrue";
-            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(90, 22);
+            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(180, 22);
             this.btntoolStripCheckUpdateTrue.Text = "بله";
             this.btntoolStripCheckUpdateTrue.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
             // 
             // btntoolStripCheckUpdateFalse
             // 
             this.btntoolStripCheckUpdateFalse.Name = "btntoolStripCheckUpdateFalse";
-            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(90, 22);
+            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(180, 22);
             this.btntoolStripCheckUpdateFalse.Text = "خیر";
             this.btntoolStripCheckUpdateFalse.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
             // 
