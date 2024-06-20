@@ -1,6 +1,5 @@
 # MyAuthenticator
-MyAuthenticator is an application for generates two-factor authentication (2FA) codes.
-This project aims to create a simple multi-platform application similar to Microsoft Authenticator or Google Authenticator.
+MyAuthenticator is an application that generates two-factor authentication (2FA) codes. This project aims to create a simple multi-platform application.
 
 Download the last installer :
 
