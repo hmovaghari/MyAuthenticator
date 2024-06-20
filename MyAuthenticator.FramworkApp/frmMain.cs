@@ -147,6 +147,7 @@ namespace MyAuthenticator.FramworkApp
             btnIsGetPasswordForRestoreBackup.Text = isEnglish ? ResourcesEn.BackupRestoreChange : ResourcesFa.BackupRestoreChange;
             toolStripChangeLanguage.Text = isEnglish ? ResourcesEn.Change_language : ResourcesFa.Change_language;
             toolStripDatabase.Text = isEnglish ? ResourcesEn.Database_ : ResourcesFa.Database_;
+            btnOpenDatabasePath.Text = isEnglish ? ResourcesEn.OpenDatabasePath : ResourcesFa.OpenDatabasePath;
             btnChangeDatabasePath.Text = isEnglish ? ResourcesEn.Change_database_path : ResourcesFa.Change_database_path;
             btnBackup.Text = isEnglish ? ResourcesEn.Get_backup : ResourcesFa.Get_backup;
             btnRestore.Text = isEnglish ? ResourcesEn.Restore_backup : ResourcesFa.Restore_backup;
@@ -811,6 +812,11 @@ namespace MyAuthenticator.FramworkApp
                     }
                 }
             }
+        }
+
+        private void btnOpenDatabasePath_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", AuthenticatorRepository.GetUserDatabaseFolder());
         }
     }
 }

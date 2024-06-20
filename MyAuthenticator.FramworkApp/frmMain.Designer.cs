@@ -43,6 +43,7 @@
             this.btntoolStripCheckUpdateFalse = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDatabase = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnOpenDatabasePath = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangeDatabasePath = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,14 +219,14 @@
             // btntoolStripCheckUpdateTrue
             // 
             this.btntoolStripCheckUpdateTrue.Name = "btntoolStripCheckUpdateTrue";
-            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(180, 22);
+            this.btntoolStripCheckUpdateTrue.Size = new System.Drawing.Size(90, 22);
             this.btntoolStripCheckUpdateTrue.Text = "بله";
             this.btntoolStripCheckUpdateTrue.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
             // 
             // btntoolStripCheckUpdateFalse
             // 
             this.btntoolStripCheckUpdateFalse.Name = "btntoolStripCheckUpdateFalse";
-            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(180, 22);
+            this.btntoolStripCheckUpdateFalse.Size = new System.Drawing.Size(90, 22);
             this.btntoolStripCheckUpdateFalse.Text = "خیر";
             this.btntoolStripCheckUpdateFalse.Click += new System.EventHandler(this.ChangeIsCheckUpdate);
             // 
@@ -240,6 +241,7 @@
             // toolStripDatabase
             // 
             this.toolStripDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnOpenDatabasePath,
             this.btnChangeDatabasePath,
             this.btnBackup,
             this.btnRestore,
@@ -250,11 +252,19 @@
             this.toolStripDatabase.Size = new System.Drawing.Size(86, 22);
             this.toolStripDatabase.Text = "پایگاه داده";
             // 
+            // btnOpenDatabasePath
+            // 
+            this.btnOpenDatabasePath.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.OpenDatabasePath;
+            this.btnOpenDatabasePath.Name = "btnOpenDatabasePath";
+            this.btnOpenDatabasePath.Size = new System.Drawing.Size(195, 22);
+            this.btnOpenDatabasePath.Text = "باز کردن مسیر پایگاه داده";
+            this.btnOpenDatabasePath.Click += new System.EventHandler(this.btnOpenDatabasePath_Click);
+            // 
             // btnChangeDatabasePath
             // 
             this.btnChangeDatabasePath.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.DatabasePath;
             this.btnChangeDatabasePath.Name = "btnChangeDatabasePath";
-            this.btnChangeDatabasePath.Size = new System.Drawing.Size(180, 22);
+            this.btnChangeDatabasePath.Size = new System.Drawing.Size(195, 22);
             this.btnChangeDatabasePath.Text = "تغییر مسیر پایگاه داده";
             this.btnChangeDatabasePath.Click += new System.EventHandler(this.btnChangeDatabasePath_Click);
             // 
@@ -262,7 +272,7 @@
             // 
             this.btnBackup.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Backup1;
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(180, 22);
+            this.btnBackup.Size = new System.Drawing.Size(195, 22);
             this.btnBackup.Text = "دریافت نسخه پشتیبان";
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
@@ -270,7 +280,7 @@
             // 
             this.btnRestore.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.Restore1;
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(180, 22);
+            this.btnRestore.Size = new System.Drawing.Size(195, 22);
             this.btnRestore.Text = "بازیابی نسخه پشتیبان";
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
@@ -278,7 +288,7 @@
             // 
             this.btnDeleteDatabase.Image = global::MyAuthenticator.FramworkApp.Properties.Resources.DeleteDatabase1;
             this.btnDeleteDatabase.Name = "btnDeleteDatabase";
-            this.btnDeleteDatabase.Size = new System.Drawing.Size(180, 22);
+            this.btnDeleteDatabase.Size = new System.Drawing.Size(195, 22);
             this.btnDeleteDatabase.Text = "پاک کردن پایگاه داده";
             this.btnDeleteDatabase.Click += new System.EventHandler(this.btnDeleteDatabase_Click);
             // 
@@ -938,5 +948,6 @@
         private System.Windows.Forms.ToolStripMenuItem btntoolStripCheckUpdateFalse;
         private System.Windows.Forms.ToolStripMenuItem toolStripCheckUpdate;
         private System.Windows.Forms.ToolStripMenuItem btnChangeDatabasePath;
+        private System.Windows.Forms.ToolStripMenuItem btnOpenDatabasePath;
     }
 }

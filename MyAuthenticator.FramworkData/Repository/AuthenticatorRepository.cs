@@ -78,6 +78,11 @@ namespace MyAuthenticator.FramworkData.Repository
             return string.IsNullOrEmpty(dataSource) ? null : dataSource;
         }
 
+        public static string GetUserDatabaseFolder()
+        {
+            return Path.GetDirectoryName(GetUserDataSource());
+        }
+
         public static void ChageUserDataSource(string dataSource)
         {
             UserSettings.Default.DataSource = dataSource;

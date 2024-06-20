@@ -312,4 +312,7 @@
   <data name="NoConnection" xml:space="preserve">
     <value>ارتباط با سرور وجود ندارد</value>
   </data>
+  <data name="OpenDatabasePath" xml:space="preserve">
+    <value>باز کردن مسیر پایگاه داده</value>
+  </data>
 </root>

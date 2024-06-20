@@ -385,6 +385,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to باز کردن مسیر پایگاه داده.
+        /// </summary>
+        internal static string OpenDatabasePath {
+            get {
+                return ResourceManager.GetString("OpenDatabasePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کلمه عبور.
         /// </summary>
         internal static string Password_ {

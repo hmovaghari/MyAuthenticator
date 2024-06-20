@@ -385,6 +385,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open database path.
+        /// </summary>
+        internal static string OpenDatabasePath {
+            get {
+                return ResourceManager.GetString("OpenDatabasePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string Password_ {
