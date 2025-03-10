@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Are you sure to delete?" xml:space="preserve">
+    <value>آیا از حذف اطمینان دارید؟</value>
+  </data>
+  <data name="Copied to the clipboard" xml:space="preserve">
+    <value>در کلیپ برد کپی شد</value>
+  </data>
+  <data name="Data is saved" xml:space="preserve">
+    <value>اطلاعات با موفقیت ذخیره شد</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Input control" xml:space="preserve">
+    <value>کنترل ورودی</value>
+  </data>
+  <data name="Name is duplicate" xml:space="preserve">
+    <value>نام تکراری است</value>
+  </data>
+  <data name="Name is empty" xml:space="preserve">
+    <value>نام وارد نشده</value>
+  </data>
+  <data name="Previous password is wrong" xml:space="preserve">
+    <value>کلمه عبور قبلی نادرست است</value>
+  </data>
+  <data name="Password is wrong" xml:space="preserve">
+    <value>کلمه عبور نادرست است</value>
+  </data>
+  <data name="Password not entered" xml:space="preserve">
+    <value>کلمه عبور وارد نشده</value>
+  </data>
+  <data name="Passwords are not the same" xml:space="preserve">
+    <value>کلمه عبورها یکسان نیستند</value>
+  </data>
+  <data name="Save data" xml:space="preserve">
+    <value>ذخیره اطلاعات</value>
+  </data>
+  <data name="Secret key is empty" xml:space="preserve">
+    <value>کد امنیتی</value>
+  </data>
+  <data name="Are you sure to delete the database? All current information will be deleted!" xml:space="preserve">
+    <value>آیا از حذف پایگاه داده اطمینان دارید؟ تمامی اطلاعات حاضر حذف خواهد شد!</value>
+  </data>
+  <data name="Are you sure to restore? All current information will be deleted!" xml:space="preserve">
+    <value>آیا از بازیابی نسخه پشتیبان اطمینان دارید؟ تمامی اطلاعات حاضر حذف خواهد شد!</value>
+  </data>
+  <data name="RowNumber is empty" xml:space="preserve">
+    <value>شماره ردیف وارد نشده</value>
+  </data>
+  <data name="There is no row to move" xml:space="preserve">
+    <value>ردیفی برای جابجایی وجود ندارد</value>
+  </data>
+  <data name="Accept_" xml:space="preserve">
+    <value>تائید</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>احراز هویت</value>
+  </data>
+  <data name="BackupRestoreChange" xml:space="preserve">
+    <value>دریافت/بازیابی یا تغییر مسیر پایگاه داده</value>
+  </data>
+  <data name="Cancel_" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="Change camera" xml:space="preserve">
+    <value>تغییر دوربین</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>تغییر کلمه عبور</value>
+  </data>
+  <data name="Clear database" xml:space="preserve">
+    <value>پاک کردن پایگاه داده</value>
+  </data>
+  <data name="Copy dynamic password" xml:space="preserve">
+    <value>کپی کلمه عبور پویا</value>
+  </data>
+  <data name="Copy secret key" xml:space="preserve">
+    <value>کپی کد امنیتی</value>
+  </data>
+  <data name="Database_" xml:space="preserve">
+    <value>پایگاه داده</value>
+  </data>
+  <data name="Show_QrCode_of_secret_key" xml:space="preserve">
+    <value>نمایش بارکد کد امنیتی</value>
+  </data>
+  <data name="Dynamic password" xml:space="preserve">
+    <value>کلمه عبور پویا</value>
+  </data>
+  <data name="Edit_" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Get backup" xml:space="preserve">
+    <value>دریافت نسخه پشتیبان</value>
+  </data>
+  <data name="Check authentication when" xml:space="preserve">
+    <value>بررسی احراز هویت در زمان</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="Move row" xml:space="preserve">
+    <value>جابجایی ردیف</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Password_" xml:space="preserve">
+    <value>کلمه عبور</value>
+  </data>
+  <data name="Previous password" xml:space="preserve">
+    <value>کلمه عبور قبلی</value>
+  </data>
+  <data name="Qr-Code" xml:space="preserve">
+    <value>بارکد</value>
+  </data>
+  <data name="Read QrCode from file" xml:space="preserve">
+    <value>خواندن بارکد از فایل</value>
+  </data>
+  <data name="Read QrCode from screen" xml:space="preserve">
+    <value>خواندن بارکد از صفحه نمایش</value>
+  </data>
+  <data name="Read QrCode from camera" xml:space="preserve">
+    <value>خواندن بارکد از دوربین</value>
+  </data>
+  <data name="Repeat password" xml:space="preserve">
+    <value>تکرار کلمه عبور</value>
+  </data>
+  <data name="Restore backup" xml:space="preserve">
+    <value>بازیابی نسخه پشتیبان</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>ردیف</value>
+  </data>
+  <data name="Row number" xml:space="preserve">
+    <value>شماره ردیف</value>
+  </data>
+  <data name="Secret key" xml:space="preserve">
+    <value>کد امنیتی</value>
+  </data>
+  <data name="Settings_" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="Show dynamic password" xml:space="preserve">
+    <value>نمایش کلمه عبور پویا</value>
+  </data>
+  <data name="Show secret key" xml:space="preserve">
+    <value>نمایش کد امنیتی</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>اعتبارسنجی دوعاملی</value>
+  </data>
+  <data name="Change language" xml:space="preserve">
+    <value>تغییر زبان</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>پشتیبانی</value>
+  </data>
+  <data name="No camera found" xml:space="preserve">
+    <value>دوربینی پیدا نشد!</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="Check updates when start" xml:space="preserve">
+    <value>بررسی آپدیت هنگام شروع</value>
+  </data>
+  <data name="Get the new update" xml:space="preserve">
+    <value>دریافت آپدیت جدید</value>
+  </data>
+  <data name="IsGetUpdate" xml:space="preserve">
+    <value>نسخه فعلی\t{Resources.Version}\nنسخه آپدیت\t{UpdateVersion}\nآیا آپدیت انجام شود؟</value>
+  </data>
+  <data name="The software is updated" xml:space="preserve">
+    <value>نرم افزار آپدیت است</value>
+  </data>
+  <data name="Change database path" xml:space="preserve">
+    <value>تغییر مسیر پایگاه داده</value>
+  </data>
+  <data name="Database path" xml:space="preserve">
+    <value>مسیر پایگاه داده</value>
+  </data>
+  <data name="The database is already created" xml:space="preserve">
+    <value>پایگاه داده قبلا ایجاد شده است</value>
+  </data>
+  <data name="NoConnection" xml:space="preserve">
+    <value>ارتباط با سرور وجود ندارد</value>
+  </data>
+  <data name="OpenDatabasePath" xml:space="preserve">
+    <value>باز کردن مسیر پایگاه داده</value>
+  </data>
+</root>
