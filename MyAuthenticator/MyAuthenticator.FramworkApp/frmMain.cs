@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Security.Policy;
 using static System.Data.Entity.Infrastructure.Design.Executor;
 using System.IO;
+using System.Threading;
 
 namespace MyAuthenticator.FramworkApp
 {
@@ -745,12 +746,15 @@ namespace MyAuthenticator.FramworkApp
 
         private void btnGetOtpFromSnip_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Thread.Sleep(1000);
             var bmp = frmSnippingTool.Snip();
             if (bmp != null)
             {
                 var otp = TOTP.ReadOtp((Bitmap)bmp);
                 FillDataFromOpt(otp);
             }
+            this.Show();
         }
 
         private void btnGetOtpFromCamera_Click(object sender, EventArgs e)
