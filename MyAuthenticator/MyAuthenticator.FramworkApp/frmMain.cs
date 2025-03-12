@@ -387,7 +387,12 @@ namespace MyAuthenticator.FramworkApp
                 if (!PasswordRepository.IsDuplicate(txtName.Text, password.PasswordID))
                 {
                     PasswordRepository.AddOrEdit(password.PasswordData);
+                    var isAdd = btnAcc.Tag?.ToString() == btnAdd.Name;
                     btnCancel_Click(null, null);
+                    if (isAdd)
+                    {
+                        bsPassword.MoveLast();
+                    }
                 }
                 else
                 {
