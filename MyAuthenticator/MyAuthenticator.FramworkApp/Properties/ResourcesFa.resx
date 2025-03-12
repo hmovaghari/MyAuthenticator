@@ -315,4 +315,12 @@
   <data name="OpenDatabasePath" xml:space="preserve">
     <value>باز کردن مسیر پایگاه داده</value>
   </data>
+  <data name="Create Or Move Database" xml:space="preserve">
+    <value>اگر فایل پایگاه داده جدید است، بله را انتخاب کنید
+اگر فایل پایگاه داده قبلی هست، خیر را انتخاب کنید
+در غیر اینصورت، انصراف را کلیک کنید</value>
+  </data>
+  <data name="The database file does not exist" xml:space="preserve">
+    <value>فایل پایگاه داده وجود ندارد</value>
+  </data>
 </root>

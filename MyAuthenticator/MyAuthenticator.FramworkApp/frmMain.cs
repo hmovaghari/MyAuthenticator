@@ -804,7 +804,7 @@ namespace MyAuthenticator.FramworkApp
         {
             if (ColtrolAutentication())
             {
-                using (var frm = new frmDataSource(Functions.Language))
+                using (var frm = new frmDataSource(isRunMoveDatabase: true, Functions.Language))
                 {
                     if (frm.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(frm.OldPath))
                     {

@@ -35,6 +35,7 @@
             this.btnDatabasePath = new System.Windows.Forms.Button();
             this.btnChangePath = new System.Windows.Forms.Button();
             this.saveDataSourceDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openDataSourceDialog = new System.Windows.Forms.OpenFileDialog();
             this.pnlChangeDataSource.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,12 @@
             // saveDataSourceDialog
             // 
             this.saveDataSourceDialog.Filter = "SQL Server Compact|*.sdf";
+            this.saveDataSourceDialog.Title = "مسیر پایگاه داده";
+            // 
+            // openDataSourceDialog
+            // 
+            this.openDataSourceDialog.Filter = "SQL Server Compact|*.sdf";
+            this.openDataSourceDialog.Title = "مسیر پایگاه داده";
             // 
             // frmDataSource
             // 
@@ -146,5 +153,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.OpenFileDialog openDataSourceDialog;
     }
 }

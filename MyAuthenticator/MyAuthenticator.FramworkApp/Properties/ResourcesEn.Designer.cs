@@ -214,6 +214,17 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If the database file is new, select Yes
+        ///If the database file is old, select No
+        ///Otherwise, click Cancel.
+        /// </summary>
+        internal static string Create_Or_Move_Database {
+            get {
+                return ResourceManager.GetString("Create Or Move Database", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data is saved.
         /// </summary>
         internal static string Data_is_saved {
@@ -606,6 +617,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The database file does not exist.
+        /// </summary>
+        internal static string The_database_file_does_not_exist {
+            get {
+                return ResourceManager.GetString("The database file does not exist", resourceCulture);
             }
         }
         

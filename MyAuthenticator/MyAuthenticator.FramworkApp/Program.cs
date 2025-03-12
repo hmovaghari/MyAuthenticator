@@ -46,7 +46,7 @@ namespace MyAuthenticator.FramworkApp
             var dataSource = AuthenticatorRepository.GetUserDataSource();
             if (string.IsNullOrEmpty(dataSource) || !File.Exists(dataSource))
             {
-                using (var frm = new frmDataSource())
+                using (var frm = new frmDataSource(isRunMoveDatabase: false))
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {

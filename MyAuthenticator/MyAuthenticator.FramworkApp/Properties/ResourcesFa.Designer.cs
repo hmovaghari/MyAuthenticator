@@ -214,6 +214,17 @@ namespace MyAuthenticator.FramworkApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اگر فایل پایگاه داده جدید است، بله را انتخاب کنید
+        ///اگر فایل پایگاه داده قبلی هست، خیر را انتخاب کنید
+        ///در غیر اینصورت، انصراف را کلیک کنید.
+        /// </summary>
+        internal static string Create_Or_Move_Database {
+            get {
+                return ResourceManager.GetString("Create Or Move Database", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات با موفقیت ذخیره شد.
         /// </summary>
         internal static string Data_is_saved {
@@ -606,6 +617,15 @@ namespace MyAuthenticator.FramworkApp.Properties {
         internal static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فایل پایگاه داده وجود ندارد.
+        /// </summary>
+        internal static string The_database_file_does_not_exist {
+            get {
+                return ResourceManager.GetString("The database file does not exist", resourceCulture);
             }
         }
         

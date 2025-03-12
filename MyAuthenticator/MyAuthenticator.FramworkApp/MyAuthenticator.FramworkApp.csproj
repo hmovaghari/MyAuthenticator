@@ -155,6 +155,7 @@
       <DependentUpon>frmSnippingTool.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="DatabaseMoveType.cs" />
     <Compile Include="MultiLanguageMessageBox.cs" />
     <Compile Include="PasswordDTO.cs" />
     <Compile Include="Program.cs" />

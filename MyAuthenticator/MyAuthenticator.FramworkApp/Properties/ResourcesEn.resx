@@ -168,6 +168,11 @@
   <data name="Copy secret key" xml:space="preserve">
     <value>Copy secret key</value>
   </data>
+  <data name="Create Or Move Database" xml:space="preserve">
+    <value>If the database file is new, select Yes
+If the database file is old, select No
+Otherwise, click Cancel</value>
+  </data>
   <data name="Data is saved" xml:space="preserve">
     <value>Data is saved</value>
   </data>
@@ -299,6 +304,9 @@
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>
+  </data>
+  <data name="The database file does not exist" xml:space="preserve">
+    <value>The database file does not exist</value>
   </data>
   <data name="The database is already created" xml:space="preserve">
     <value>The database is already created</value>
